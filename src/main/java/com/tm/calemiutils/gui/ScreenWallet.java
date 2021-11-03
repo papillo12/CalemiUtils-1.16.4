@@ -70,10 +70,10 @@ public class ScreenWallet extends ContainerScreenBase<ContainerWallet> {
 
             ItemWallet walletItem = (ItemWallet) walletStack.getItem();
 
-            int price = ((ItemCoin) InitItems.COIN_PENNY.get()).value;
-            if (id == 1) price = ((ItemCoin) InitItems.COIN_NICKEL.get()).value;
-            else if (id == 2) price = ((ItemCoin) InitItems.COIN_QUARTER.get()).value;
-            else if (id == 3) price = ((ItemCoin) InitItems.COIN_DOLLAR.get()).value;
+            int price = ((ItemCoin) InitItems.COIN_COPPER.get()).value;
+            if (id == 1) price = ((ItemCoin) InitItems.COIN_SILVER.get()).value;
+            else if (id == 2) price = ((ItemCoin) InitItems.COIN_GOLD.get()).value;
+            else if (id == 3) price = ((ItemCoin) InitItems.COIN_PLATINUM.get()).value;
 
             int multiplier = MathHelper.getShiftCtrlInt(1, 16, 64, 9 * 64);
             price *= multiplier;
@@ -99,10 +99,10 @@ public class ScreenWallet extends ContainerScreenBase<ContainerWallet> {
     @Override
     public void drawGuiBackground(MatrixStack matrixStack, int mouseY, int mouseX) {
 
-        ScreenHelper.drawItemStack(itemRenderer, new ItemStack(InitItems.COIN_PENNY.get()), getScreenX() + 127, getScreenY() + 15);
-        ScreenHelper.drawItemStack(itemRenderer, new ItemStack(InitItems.COIN_NICKEL.get()), getScreenX() + 127, getScreenY() + 33);
-        ScreenHelper.drawItemStack(itemRenderer, new ItemStack(InitItems.COIN_QUARTER.get()), getScreenX() + 127, getScreenY() + 51);
-        ScreenHelper.drawItemStack(itemRenderer, new ItemStack(InitItems.COIN_DOLLAR.get()), getScreenX() + 127, getScreenY() + 69);
+        ScreenHelper.drawItemStack(itemRenderer, new ItemStack(InitItems.COIN_COPPER.get()), getScreenX() + 127, getScreenY() + 15);
+        ScreenHelper.drawItemStack(itemRenderer, new ItemStack(InitItems.COIN_SILVER.get()), getScreenX() + 127, getScreenY() + 33);
+        ScreenHelper.drawItemStack(itemRenderer, new ItemStack(InitItems.COIN_GOLD.get()), getScreenX() + 127, getScreenY() + 51);
+        ScreenHelper.drawItemStack(itemRenderer, new ItemStack(InitItems.COIN_PLATINUM.get()), getScreenX() + 127, getScreenY() + 69);
 
         GL11.glDisable(GL11.GL_LIGHTING);
         GL11.glColor4f(1, 1, 1, 1);

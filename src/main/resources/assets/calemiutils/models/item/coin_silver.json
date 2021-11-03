@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "calemiutils:items/coins/coin_dollar"
+    "layer0": "calemiutils:items/coins/coin_silver"
   }
 }

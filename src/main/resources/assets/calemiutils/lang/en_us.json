@@ -1,9 +1,5 @@
 {
   "item.calemiutils.raritanium": "Raritanium",
-  "item.calemiutils.coin_penny": "Penny",
-  "item.calemiutils.coin_nickel": "Nickel",
-  "item.calemiutils.coin_quarter": "Quarter",
-  "item.calemiutils.coin_dollar": "Dollar",
   "item.calemiutils.money_bag_cheap": "Cheap Money Bag",
   "item.calemiutils.money_bag_rich": "Rich Money Bag",
   "item.calemiutils.gold_chip": "Gold Chip",
@@ -35,10 +31,10 @@
 
 
   "block.calemiutils.raritanium_ore": "Raritanium Ore",
-  "block.calemiutils.coin_stack_penny": "Penny",
-  "block.calemiutils.coin_stack_nickel": "Nickel",
-  "block.calemiutils.coin_stack_quarter": "Quarter",
-  "block.calemiutils.coin_stack_dollar": "Dollar",
+  "block.calemiutils.coin_stack_copper": "Copper Coin",
+  "block.calemiutils.coin_stack_silver": "Silver Coin",
+  "block.calemiutils.coin_stack_gold": "Gold Coin",
+  "block.calemiutils.coin_stack_platinum": "Platinum Coin",
   "block.calemiutils.blueprint": "Blueprint",
   "block.calemiutils.iron_scaffold": "Iron Scaffold",
   "block.calemiutils.torch_placer": "Torch Placer",

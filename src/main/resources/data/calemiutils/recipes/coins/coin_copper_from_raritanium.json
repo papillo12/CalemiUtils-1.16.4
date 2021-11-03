@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "coin_penny",
+  "group": "coin_copper",
   "ingredients": [
     {
       "tag": "calemiutils:raritanium"
     }
   ],
   "result": {
-    "item": "calemiutils:coin_penny",
+    "item": "calemiutils:coin_copper",
     "count": 1
   }
 }

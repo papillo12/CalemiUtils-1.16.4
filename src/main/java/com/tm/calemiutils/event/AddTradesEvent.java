@@ -17,7 +17,7 @@ public class AddTradesEvent {
     public void onVillagerTrade (VillagerTradesEvent event) {
 
         if (event.getType() == VillagerProfession.LIBRARIAN) {
-            event.getTrades().get(1).add((entity, random) -> new MerchantOffer(new ItemStack(InitItems.COIN_QUARTER.get(), 1), new ItemStack(Items.EMERALD, 1), 128, 0, 0.05F));
+            event.getTrades().get(1).add((entity, random) -> new MerchantOffer(new ItemStack(InitItems.COIN_GOLD.get(), 1), new ItemStack(Items.EMERALD, 1), 128, 0, 0.05F));
         }
     }
 }

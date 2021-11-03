@@ -33,7 +33,7 @@ public class ContainerWallet extends ContainerBase {
         this.selectedSlot = selectedSlot;
 
         //New Inventory
-        addSlot(new SlotIInventoryFilter(stackInv, 0, 17, 42, InitItems.COIN_PENNY.get(), InitItems.COIN_NICKEL.get(), InitItems.COIN_QUARTER.get(), InitItems.COIN_DOLLAR.get()));
+        addSlot(new SlotIInventoryFilter(stackInv, 0, 17, 42, InitItems.COIN_COPPER.get(), InitItems.COIN_SILVER.get(), InitItems.COIN_GOLD.get(), InitItems.COIN_PLATINUM.get()));
     }
 
     public static ContainerWallet createClientWallet (final int windowId, final PlayerInventory playerInventory, final PacketBuffer data) {

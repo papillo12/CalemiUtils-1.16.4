@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "coin_platinum",
+  "ingredients": [
+    {
+      "item": "calemiutils:coin_gold"
+    },
+    {
+      "item": "calemiutils:coin_gold"
+    },
+    {
+      "item": "calemiutils:coin_gold"
+    },
+    {
+      "item": "calemiutils:coin_gold"
+    }
+  ],
+  "result": {
+    "item": "calemiutils:coin_platinum",
+    "count": 1
+  }
+}

@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "calemiutils:coin_quarter",
+          "name": "calemiutils:coin_platinum",
           "functions": [
             {
               "function":"set_count",

@@ -55,22 +55,22 @@ public class PacketWallet {
 
                     ItemWallet wallet = (ItemWallet) walletStack.getItem();
 
-                    Item item = InitItems.COIN_PENNY.get();
-                    int price = ((ItemCoin) InitItems.COIN_PENNY.get()).value;
+                    Item item = InitItems.COIN_COPPER.get();
+                    int price = ((ItemCoin) InitItems.COIN_COPPER.get()).value;
 
                     if (buttonId == 1) {
-                        item = InitItems.COIN_NICKEL.get();
-                        price = ((ItemCoin) InitItems.COIN_NICKEL.get()).value;
+                        item = InitItems.COIN_SILVER.get();
+                        price = ((ItemCoin) InitItems.COIN_SILVER.get()).value;
                     }
 
                     else if (buttonId == 2) {
-                        item = InitItems.COIN_QUARTER.get();
-                        price = ((ItemCoin) InitItems.COIN_QUARTER.get()).value;
+                        item = InitItems.COIN_GOLD.get();
+                        price = ((ItemCoin) InitItems.COIN_GOLD.get()).value;
                     }
 
                     else if (buttonId == 3) {
-                        item = InitItems.COIN_DOLLAR.get();
-                        price = ((ItemCoin) InitItems.COIN_DOLLAR.get()).value;
+                        item = InitItems.COIN_PLATINUM.get();
+                        price = ((ItemCoin) InitItems.COIN_PLATINUM.get()).value;
                     }
 
                     price *= multiplier;

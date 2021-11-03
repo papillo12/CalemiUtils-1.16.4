@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "calemiutils:coin_penny",
+          "name": "calemiutils:coin_gold",
           "functions": [
             {
               "function":"set_count",

@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "coin_nickel",
+  "group": "coin_silver",
   "ingredients": [
     {
-      "item": "calemiutils:coin_quarter"
+      "item": "calemiutils:coin_gold"
     }
   ],
   "result": {
-    "item": "calemiutils:coin_nickel",
+    "item": "calemiutils:coin_silver",
     "count": 5
   }
 }

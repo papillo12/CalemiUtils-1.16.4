@@ -28,10 +28,10 @@ public class InitItems {
     public static final RegistryObject<Block> RARITANIUM_ORE = BLOCKS.register("raritanium_ore", BlockRaritaniumOre::new);
     public static final RegistryObject<Item> RARITANIUM_ORE_ITEM = ITEMS.register("raritanium_ore", () -> new BlockItemBase(RARITANIUM_ORE.get()));
 
-    public static final RegistryObject<Block> COIN_STACK_PENNY = BLOCKS.register("coin_stack_penny", BlockCoinStack::new);
-    public static final RegistryObject<Block> COIN_STACK_NICKEL = BLOCKS.register("coin_stack_nickel", BlockCoinStack::new);
-    public static final RegistryObject<Block> COIN_STACK_QUARTER = BLOCKS.register("coin_stack_quarter", BlockCoinStack::new);
-    public static final RegistryObject<Block> COIN_STACK_DOLLAR = BLOCKS.register("coin_stack_dollar", BlockCoinStack::new);
+    public static final RegistryObject<Block> COIN_STACK_COPPER = BLOCKS.register("coin_stack_copper", BlockCoinStack::new);
+    public static final RegistryObject<Block> COIN_STACK_SILVER = BLOCKS.register("coin_stack_silver", BlockCoinStack::new);
+    public static final RegistryObject<Block> COIN_STACK_GOLD = BLOCKS.register("coin_stack_gold", BlockCoinStack::new);
+    public static final RegistryObject<Block> COIN_STACK_PLATINUM = BLOCKS.register("coin_stack_platinum", BlockCoinStack::new);
 
     public static final RegistryObject<Block> BLUEPRINT = BLOCKS.register("blueprint", BlockBlueprint::new);
     public static final RegistryObject<Item> BLUEPRINT_ITEM = ITEMS.register("blueprint", BlockBlueprintItem::new);
@@ -75,10 +75,10 @@ public class InitItems {
     //----- ITEMS ------\\
 
     public static final RegistryObject<Item> RARITANIUM = ITEMS.register("raritanium", ItemBase::new);
-    public static final RegistryObject<Item> COIN_PENNY = ITEMS.register("coin_penny", () -> new ItemCoin(1, COIN_STACK_PENNY.get()));
-    public static final RegistryObject<Item> COIN_NICKEL = ITEMS.register("coin_nickel", () -> new ItemCoin(5, COIN_STACK_NICKEL.get()));
-    public static final RegistryObject<Item> COIN_QUARTER = ITEMS.register("coin_quarter", () -> new ItemCoin(25, COIN_STACK_QUARTER.get()));
-    public static final RegistryObject<Item> COIN_DOLLAR = ITEMS.register("coin_dollar", () -> new ItemCoin(100, COIN_STACK_DOLLAR.get()));
+    public static final RegistryObject<Item> COIN_COPPER = ITEMS.register("coin_copper", () -> new ItemCoin(1, COIN_STACK_COPPER.get()));
+    public static final RegistryObject<Item> COIN_SILVER = ITEMS.register("coin_silver", () -> new ItemCoin(5, COIN_STACK_SILVER.get()));
+    public static final RegistryObject<Item> COIN_GOLD = ITEMS.register("coin_gold", () -> new ItemCoin(25, COIN_STACK_GOLD.get()));
+    public static final RegistryObject<Item> COIN_PLATINUM = ITEMS.register("coin_platinum", () -> new ItemCoin(100, COIN_STACK_PLATINUM.get()));
 
     public static final RegistryObject<Item> MONEY_BAG_CHEAP = ITEMS.register("money_bag_cheap", () -> new ItemMoneyBag(false));
     public static final RegistryObject<Item> MONEY_BAG_RICH = ITEMS.register("money_bag_rich", () -> new ItemMoneyBag(true));

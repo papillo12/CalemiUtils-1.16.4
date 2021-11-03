@@ -122,13 +122,13 @@ public class ScreenMarket extends GuiScreenBase {
             buyTab = new MarketTab(market.marketItemsToBuy, getScreenX() - 53, getScreenY() - 52, "Buy Items", getScreenX() - 90, getScreenY() - 38, itemRenderer);
             sellTab = new MarketTab(market.marketItemsToSell, getScreenX() + 5, getScreenY() - 52, "Sell Items", getScreenX() - 90, getScreenY() - 38, itemRenderer);
 
-            for (int index = 0; index < market.marketItemsToBuy.size(); index++) {
+            for (int index = 0; index < Math.min(market.marketItemsToBuy.size(), 50); index++) {
                 int selectedIndex = index;
                 MarketButton button = buyTab.addButton(index, (btn) -> setSelectedIndex(selectedIndex));
                 if (!button.getRenderedStack().isEmpty()) addButton(button);
             }
 
-            for (int index = 0; index < market.marketItemsToSell.size(); index++) {
+            for (int index = 0; index < Math.min(market.marketItemsToSell.size(), 50); index++) {
                 int selectedIndex = index;
                 MarketButton button = sellTab.addButton(index, (btn) -> setSelectedIndex(selectedIndex));
                 if (!button.getRenderedStack().isEmpty()) addButton(button);

@@ -1,15 +1,13 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " X ",
-    "XXX",
-    " X "
-  ],
-  "key": {
-    "X": {
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
       "item": "minecraft:netherite_ingot"
+    },
+    {
+      "item": "calemiutils:knob_diamond"
     }
-  },
+  ],
   "result": {
     "item": "calemiutils:knob_netherite",
     "count": 1

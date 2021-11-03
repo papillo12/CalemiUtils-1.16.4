@@ -3,11 +3,11 @@
   "group": "coin_quarter",
   "ingredients": [
     {
-      "item": "calemiutils:coin_dollar"
+      "item": "calemiutils:coin_platinum"
     }
   ],
   "result": {
-    "item": "calemiutils:coin_quarter",
+    "item": "calemiutils:coin_gold",
     "count": 4
   }
 }

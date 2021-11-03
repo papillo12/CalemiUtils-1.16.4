@@ -74,10 +74,10 @@ public class ItemMoneyBag extends ItemBase {
             amount -= (nickels * 5);
             int pennies = amount;
 
-            ItemHelper.spawnStackAtEntity(world, player, new ItemStack(InitItems.COIN_DOLLAR.get(), dollars));
-            ItemHelper.spawnStackAtEntity(world, player, new ItemStack(InitItems.COIN_QUARTER.get(), quarters));
-            ItemHelper.spawnStackAtEntity(world, player, new ItemStack(InitItems.COIN_NICKEL.get(), nickels));
-            ItemHelper.spawnStackAtEntity(world, player, new ItemStack(InitItems.COIN_PENNY.get(), pennies));
+            ItemHelper.spawnStackAtEntity(world, player, new ItemStack(InitItems.COIN_PLATINUM.get(), dollars));
+            ItemHelper.spawnStackAtEntity(world, player, new ItemStack(InitItems.COIN_GOLD.get(), quarters));
+            ItemHelper.spawnStackAtEntity(world, player, new ItemStack(InitItems.COIN_SILVER.get(), nickels));
+            ItemHelper.spawnStackAtEntity(world, player, new ItemStack(InitItems.COIN_COPPER.get(), pennies));
         }
     }
 }
