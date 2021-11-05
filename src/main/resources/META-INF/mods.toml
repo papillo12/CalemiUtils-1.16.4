@@ -12,7 +12,7 @@ description='''
     Utilities that make your Minecraft experience better!
     '''
 
-[[dependencies.cspirit]]
+[[dependencies.calemiutils]]
 modId="forge"
 mandatory=true
 versionRange="[31,)"

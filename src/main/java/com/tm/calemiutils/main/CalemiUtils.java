@@ -80,6 +80,8 @@ public class CalemiUtils {
 
     private void onCommonSetup(final FMLCommonSetupEvent event) {
 
+        int hey = CUConfig.worldGen.raritaniumOreGenMaxY.get();
+
         WorldGen.initOres();
 
         int id = 0;
