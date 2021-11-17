@@ -1,7 +1,7 @@
 package com.tm.calemiutils.item.base;
 
-import com.tm.calemiutils.main.CalemiUtils;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Rarity;
 
@@ -14,10 +14,14 @@ public class ItemBase extends Item {
     private boolean hasEffect = false;
 
     public ItemBase () {
-        this(new Item.Properties().group(CalemiUtils.TAB));
+        this(new Properties());
     }
 
-    public ItemBase (Item.Properties properties) {
+    public ItemBase (ItemGroup tab) {
+        this(new Properties().group(tab));
+    }
+
+    public ItemBase (Properties properties) {
         super(properties);
     }
 

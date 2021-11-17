@@ -2,8 +2,8 @@ package com.tm.calemiutils.block.base;
 
 import com.tm.calemiutils.tileentity.base.TileEntityInventoryBase;
 import com.tm.calemiutils.tileentity.base.TileEntityUpgradable;
-import com.tm.calemiutils.util.Location;
-import com.tm.calemiutils.util.helper.InventoryHelper;
+import com.tm.api.calemicore.util.Location;
+import com.tm.api.calemicore.util.helper.InventoryHelper;
 import com.tm.calemiutils.util.helper.SecurityHelper;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;

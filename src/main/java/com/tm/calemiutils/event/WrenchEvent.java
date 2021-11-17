@@ -1,9 +1,9 @@
 package com.tm.calemiutils.event;
 
 import com.tm.calemiutils.tileentity.base.ICurrencyNetworkBank;
-import com.tm.calemiutils.tileentity.base.TileEntityBase;
-import com.tm.calemiutils.util.Location;
-import com.tm.calemiutils.util.helper.ItemHelper;
+import com.tm.calemiutils.tileentity.base.TileEntityCUBase;
+import com.tm.api.calemicore.util.Location;
+import com.tm.api.calemicore.util.helper.ItemHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
@@ -53,12 +53,12 @@ public class WrenchEvent {
             PlayerEntity player = (PlayerEntity) event.getEntity();
             TileEntity tileEntity = event.getWorld().getTileEntity(event.getPos());
 
-            if (tileEntity instanceof TileEntityBase) {
+            if (tileEntity instanceof TileEntityCUBase) {
                 ItemStack mainStack = player.getHeldItem(Hand.MAIN_HAND);
                 ItemStack offStack = player.getHeldItem(Hand.OFF_HAND);
 
-                if (transferCurrencyToBlock(mainStack, (TileEntityBase) tileEntity));
-                else transferCurrencyToBlock(offStack, (TileEntityBase) tileEntity);
+                if (transferCurrencyToBlock(mainStack, (TileEntityCUBase) tileEntity));
+                else transferCurrencyToBlock(offStack, (TileEntityCUBase) tileEntity);
             }
         }
     }
@@ -67,7 +67,7 @@ public class WrenchEvent {
      * Used to check if a stack hold currency, and if it does, transfer it to the block.
      * Called twice for main & off hand.
      */
-    private boolean transferCurrencyToBlock(ItemStack stack, TileEntityBase tileEntity) {
+    private boolean transferCurrencyToBlock(ItemStack stack, TileEntityCUBase tileEntity) {
 
         //Checks if the held Item is a Block.
         if (stack.getItem() instanceof BlockItem) {

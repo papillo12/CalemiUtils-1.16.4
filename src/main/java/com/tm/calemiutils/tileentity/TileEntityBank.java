@@ -10,8 +10,8 @@ import com.tm.calemiutils.security.SecurityProfile;
 import com.tm.calemiutils.tileentity.base.ICurrencyNetworkBank;
 import com.tm.calemiutils.tileentity.base.ICurrencyNetworkUnit;
 import com.tm.calemiutils.tileentity.base.TileEntityInventoryBase;
-import com.tm.calemiutils.util.Location;
-import com.tm.calemiutils.util.VeinScan;
+import com.tm.api.calemicore.util.Location;
+import com.tm.calemiutils.util.helper.NetworkVeinScan;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
@@ -29,7 +29,7 @@ public class TileEntityBank extends TileEntityInventoryBase implements ICurrency
     private final SecurityProfile profile = new SecurityProfile();
     public final List<Location> connectedUnits = new ArrayList<>();
     public int storedCurrency = 0;
-    private VeinScan scan;
+    private NetworkVeinScan scan;
 
     public TileEntityBank () {
         super(InitTileEntityTypes.BANK.get());
@@ -44,7 +44,7 @@ public class TileEntityBank extends TileEntityInventoryBase implements ICurrency
         }
 
         if (getLocation() != null && scan == null) {
-            scan = new VeinScan(getLocation());
+            scan = new NetworkVeinScan(getLocation());
         }
 
         if (scan != null) {

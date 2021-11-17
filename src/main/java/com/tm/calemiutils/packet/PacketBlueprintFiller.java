@@ -1,7 +1,7 @@
 package com.tm.calemiutils.packet;
 
 import com.tm.calemiutils.tileentity.TileEntityBlueprintFiller;
-import com.tm.calemiutils.util.Location;
+import com.tm.api.calemicore.util.Location;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;

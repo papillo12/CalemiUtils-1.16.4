@@ -2,8 +2,8 @@ package com.tm.calemiutils.packet;
 
 import com.tm.calemiutils.block.BlockItemStand;
 import com.tm.calemiutils.tileentity.TileEntityItemStand;
-import com.tm.calemiutils.util.Location;
-import com.tm.calemiutils.util.helper.PacketHelper;
+import com.tm.api.calemicore.util.Location;
+import com.tm.api.calemicore.util.helper.PacketHelper;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.BlockPos;

@@ -1,12 +1,14 @@
 package com.tm.calemiutils.block;
 
 import com.tm.calemiutils.block.base.BlockInventoryContainerBase;
+import com.tm.api.calemicore.util.helper.*;
 import com.tm.calemiutils.init.InitItems;
+import com.tm.calemiutils.init.InitSounds;
 import com.tm.calemiutils.init.InitTileEntityTypes;
 import com.tm.calemiutils.item.ItemWallet;
 import com.tm.calemiutils.tileentity.TileEntityTradingPost;
-import com.tm.calemiutils.util.Location;
-import com.tm.calemiutils.util.UnitChatMessage;
+import com.tm.api.calemicore.util.Location;
+import com.tm.api.calemicore.util.UnitChatMessage;
 import com.tm.calemiutils.util.helper.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -19,6 +21,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -87,8 +90,8 @@ public class BlockTradingPost extends BlockInventoryContainerBase {
 
                 if (tePost.hasValidTradeOffer) {
 
-                    if (tePost.adminMode) message.printMessage(TextFormatting.GREEN, (tePost.buyMode ? "Buying " : "Selling ") + StringHelper.printCommas(tePost.amountForSale) + "x " + tePost.getStackForSale().getDisplayName().getString() + " for " + (tePost.salePrice > 0 ? (StringHelper.printCurrency(tePost.salePrice)) : "free"));
-                    else message.printMessage(TextFormatting.GREEN, tePost.getSecurityProfile().getOwnerName() + " is " + (tePost.buyMode ? "buying " : "selling ") + StringHelper.printCommas(tePost.amountForSale) + "x " + tePost.getStackForSale().getDisplayName().getString() + " for " + (tePost.salePrice > 0 ? (StringHelper.printCurrency(tePost.salePrice)) : "free"));
+                    if (tePost.adminMode) message.printMessage(TextFormatting.GREEN, (tePost.buyMode ? "Buying " : "Selling ") + StringHelper.printCommas(tePost.amountForSale) + "x " + tePost.getStackForSale().getDisplayName().getString() + " for " + (tePost.salePrice > 0 ? (CurrencyHelper.printCurrency(tePost.salePrice)) : "free"));
+                    else message.printMessage(TextFormatting.GREEN, tePost.getSecurityProfile().getOwnerName() + " is " + (tePost.buyMode ? "buying " : "selling ") + StringHelper.printCommas(tePost.amountForSale) + "x " + tePost.getStackForSale().getDisplayName().getString() + " for " + (tePost.salePrice > 0 ? (CurrencyHelper.printCurrency(tePost.salePrice)) : "free"));
 
                     message.printMessage(TextFormatting.GREEN, "Hold a wallet in your inventory to make a purchase.");
                 }
@@ -172,7 +175,7 @@ public class BlockTradingPost extends BlockInventoryContainerBase {
                         //Adds funds to the Player's current wallet.
                         CurrencyHelper.depositToWallet(walletStack, tePost.salePrice);
 
-                        SoundHelper.playCoin(world, player);
+                        SoundHelper.playSound(player, InitSounds.COIN.get(), SoundCategory.PLAYERS, 0.1F, 1F);
                     }
 
                     else if (!world.isRemote) message.printMessage(TextFormatting.RED, "The connected Bank is out of money!");
@@ -227,7 +230,7 @@ public class BlockTradingPost extends BlockInventoryContainerBase {
                     //Removes the amount of Items for sale.
                     if (!tePost.adminMode) InventoryHelper.consumeStack(tePost.getInventory(), tePost.amountForSale, true, tePost.getStackForSale());
 
-                    SoundHelper.playCoin(world, player);
+                    SoundHelper.playSound(player, InitSounds.COIN.get(), SoundCategory.PLAYERS, 0.1F, 1F);
                 }
 
                 else if (!world.isRemote) message.printMessage(TextFormatting.RED, "Full of money!");

@@ -1,20 +1,22 @@
 package com.tm.calemiutils.gui;
 
 import com.tm.calemiutils.main.CalemiUtils;
-import com.tm.calemiutils.gui.base.ButtonRect;
+import com.tm.api.calemicore.gui.ButtonRect;
 import com.tm.calemiutils.gui.base.GuiScreenBase;
-import com.tm.calemiutils.gui.base.TextFieldRect;
+import com.tm.api.calemicore.gui.TextFieldRect;
 import com.tm.calemiutils.item.ItemLinkBookLocation;
 import com.tm.calemiutils.packet.PacketLinkBook;
-import com.tm.calemiutils.util.Location;
-import com.tm.calemiutils.util.helper.ItemHelper;
-import com.tm.calemiutils.util.helper.ScreenHelper;
-import com.tm.calemiutils.util.helper.SoundHelper;
+import com.tm.api.calemicore.util.Location;
+import com.tm.api.calemicore.util.helper.ItemHelper;
+import com.tm.api.calemicore.util.helper.ScreenHelper;
+import com.tm.api.calemicore.util.helper.SoundHelper;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -144,8 +146,8 @@ public class ScreenLinkBook extends GuiScreenBase {
                 float yaw = ItemLinkBookLocation.getLinkedRotation(bookStack);
                 String dimName = ItemLinkBookLocation.getLinkedDimensionName(bookStack);
 
-                SoundHelper.playWarp(player.world, player, location);
-                SoundHelper.playWarp(player.world, player);
+                SoundHelper.playSoundAtLocation(location, SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 0.9F, 1.1F);
+                SoundHelper.playSound(player, SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 0.9F, 1.1F);
 
                 CalemiUtils.network.sendToServer(new PacketLinkBook("teleport", hand, pos, yaw, dimName));
 

@@ -2,7 +2,7 @@ package com.tm.calemiutils.render;
 
 import com.tm.calemiutils.block.BlockBookStand;
 import com.tm.calemiutils.tileentity.TileEntityBookStand;
-import com.tm.calemiutils.util.Location;
+import com.tm.api.calemicore.util.Location;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.IRenderTypeBuffer;

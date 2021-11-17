@@ -1,8 +1,7 @@
 package com.tm.calemiutils.tileentity.base;
 
-import com.tm.calemiutils.security.ISecurity;
-import com.tm.calemiutils.util.Location;
-import com.tm.calemiutils.util.UnitChatMessage;
+import com.tm.api.calemicore.util.Location;
+import com.tm.api.calemicore.util.UnitChatMessage;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
@@ -16,12 +15,8 @@ import javax.annotation.Nullable;
 
 public abstract class TileEntityBase extends TileEntity implements ITickableTileEntity {
 
-    public boolean enable;
-
-    public TileEntityBase (final TileEntityType<?> tileEntityType) {
+    public TileEntityBase(final TileEntityType<?> tileEntityType) {
         super(tileEntityType);
-
-        enable = true;
     }
 
     @Override
@@ -55,44 +50,6 @@ public abstract class TileEntityBase extends TileEntity implements ITickableTile
     @Override
     public void handleUpdateTag(BlockState state, CompoundNBT tag) {
         read(state, tag);
-    }
-
-    @Override
-    public void read (BlockState state, CompoundNBT nbt) {
-
-        if (this instanceof ISecurity) {
-
-            ISecurity security = (ISecurity) this;
-            security.getSecurityProfile().readFromNBT(nbt);
-        }
-
-        if (this instanceof ICurrencyNetworkBank) {
-
-            ICurrencyNetworkBank currency = (ICurrencyNetworkBank) this;
-            currency.setCurrency(nbt.getInt("currency"));
-        }
-
-        enable = nbt.getBoolean("enable");
-        super.read(state, nbt);
-    }
-
-    @Override
-    public CompoundNBT write (CompoundNBT nbt) {
-
-        if (this instanceof ISecurity) {
-
-            ISecurity security = (ISecurity) this;
-            security.getSecurityProfile().writeToNBT(nbt);
-        }
-
-        if (this instanceof ICurrencyNetworkBank) {
-
-            ICurrencyNetworkBank currency = (ICurrencyNetworkBank) this;
-            nbt.putInt("currency", currency.getStoredCurrency());
-        }
-
-        nbt.putBoolean("enable", enable);
-        return super.write(nbt);
     }
 
     @Nullable

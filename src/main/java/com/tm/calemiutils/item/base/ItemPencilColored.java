@@ -17,7 +17,7 @@ public class ItemPencilColored implements IItemColor {
         ItemPencil pencil = (ItemPencil) InitItems.PENCIL.get();
 
         if (tintLayer == 1) {
-            int colorMeta = pencil.getColorId(stack);
+            int colorMeta = ItemPencil.getColorId(stack);
             DyeColor dye = DyeColor.byId(colorMeta);
 
             return dye.getColorValue();

@@ -1,7 +1,7 @@
 package com.tm.calemiutils.packet;
 
-import com.tm.calemiutils.tileentity.base.TileEntityBase;
-import com.tm.calemiutils.util.Location;
+import com.tm.calemiutils.tileentity.base.TileEntityCUBase;
+import com.tm.api.calemicore.util.Location;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.BlockPos;
@@ -49,8 +49,8 @@ public class PacketEnableTileEntity {
                 Location location = new Location(player.world, pos);
 
                 //Checks if the Tile Entity at the given Location is a Tile Entity Base.
-                if (location.getTileEntity() instanceof TileEntityBase) {
-                    ((TileEntityBase) location.getTileEntity()).enable = enable;
+                if (location.getTileEntity() instanceof TileEntityCUBase) {
+                    ((TileEntityCUBase) location.getTileEntity()).enable = enable;
                 }
             }
         });

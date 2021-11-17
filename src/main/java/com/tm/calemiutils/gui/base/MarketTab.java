@@ -1,8 +1,9 @@
 package com.tm.calemiutils.gui.base;
 
+import com.tm.api.calemicore.gui.ScreenRect;
 import com.tm.calemiutils.main.CUReference;
 import com.tm.calemiutils.config.MarketItemsFile;
-import com.tm.calemiutils.util.helper.ScreenHelper;
+import com.tm.api.calemicore.util.helper.ScreenHelper;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.widget.button.Button;

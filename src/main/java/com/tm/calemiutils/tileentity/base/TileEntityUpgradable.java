@@ -1,6 +1,7 @@
 package com.tm.calemiutils.tileentity.base;
 
-import com.tm.calemiutils.util.helper.MathHelper;
+import com.tm.api.calemicore.tileentity.CCItemHandler;
+import com.tm.api.calemicore.util.helper.MathHelper;
 import net.minecraft.block.BlockState;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.nbt.CompoundNBT;
@@ -11,7 +12,7 @@ import java.util.List;
 
 public abstract class TileEntityUpgradable extends TileEntityInventoryBase implements IProgress, IRange {
 
-    private final CUItemHandler upgradeInventory;
+    private final CCItemHandler upgradeInventory;
     public final List<Slot> upgradeSlots = new ArrayList<>();
 
     public int currentProgress;
@@ -19,7 +20,7 @@ public abstract class TileEntityUpgradable extends TileEntityInventoryBase imple
 
     protected TileEntityUpgradable (TileEntityType<?> tileEntityTypeIn) {
         super(tileEntityTypeIn);
-        this.upgradeInventory = new CUItemHandler(2, upgradeSlots);
+        this.upgradeInventory = new CCItemHandler(2, upgradeSlots);
     }
 
     protected abstract int getRangeSlot ();
@@ -29,7 +30,7 @@ public abstract class TileEntityUpgradable extends TileEntityInventoryBase imple
     protected abstract int getScaledSpeedMin ();
     protected abstract int getScaledSpeedMax ();
 
-    public CUItemHandler getUpgradeInventory() {
+    public CCItemHandler getUpgradeInventory() {
         return this.upgradeInventory;
     }
 

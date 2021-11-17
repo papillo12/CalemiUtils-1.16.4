@@ -2,14 +2,14 @@ package com.tm.calemiutils.gui;
 
 import com.tm.calemiutils.main.CalemiUtils;
 import com.tm.calemiutils.config.CUConfig;
-import com.tm.calemiutils.gui.base.ButtonRect;
+import com.tm.api.calemicore.gui.ButtonRect;
 import com.tm.calemiutils.gui.base.ContainerScreenBase;
 import com.tm.calemiutils.inventory.ContainerBank;
 import com.tm.calemiutils.item.ItemWallet;
 import com.tm.calemiutils.packet.PacketBank;
 import com.tm.calemiutils.tileentity.TileEntityBank;
 import com.tm.calemiutils.util.helper.CurrencyHelper;
-import com.tm.calemiutils.util.helper.MathHelper;
+import com.tm.api.calemicore.util.helper.MathHelper;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;

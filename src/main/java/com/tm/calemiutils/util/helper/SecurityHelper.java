@@ -2,8 +2,8 @@ package com.tm.calemiutils.util.helper;
 
 import com.tm.calemiutils.config.CUConfig;
 import com.tm.calemiutils.security.ISecurity;
-import com.tm.calemiutils.util.Location;
-import com.tm.calemiutils.util.UnitChatMessage;
+import com.tm.api.calemicore.util.Location;
+import com.tm.api.calemicore.util.UnitChatMessage;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.text.TextFormatting;

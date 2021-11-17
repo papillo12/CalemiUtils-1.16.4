@@ -1,7 +1,8 @@
 package com.tm.calemiutils.event;
 
-import com.tm.calemiutils.util.helper.ItemHelper;
-import com.tm.calemiutils.util.helper.LoreHelper;
+import com.tm.api.calemicore.util.helper.ItemHelper;
+import com.tm.api.calemicore.util.helper.LoreHelper;
+import com.tm.calemiutils.util.helper.CurrencyHelper;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -23,7 +24,7 @@ public class WrenchLoreEvent {
 
             if (currency != 0) {
                 event.getToolTip().add(new StringTextComponent(""));
-                LoreHelper.addCurrencyLore(event.getToolTip(), currency);
+                CurrencyHelper.addCurrencyLore(event.getToolTip(), currency);
             }
         }
     }

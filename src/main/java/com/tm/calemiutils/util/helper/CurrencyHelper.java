@@ -1,5 +1,6 @@
 package com.tm.calemiutils.util.helper;
 
+import com.tm.api.calemicore.util.helper.StringHelper;
 import com.tm.calemiutils.main.CalemiUtils;
 import com.tm.calemiutils.config.CUConfig;
 import com.tm.calemiutils.init.InitItems;
@@ -7,7 +8,12 @@ import com.tm.calemiutils.item.ItemWallet;
 import com.tm.calemiutils.tileentity.base.ICurrencyNetworkBank;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import top.theillusivec4.curios.api.CuriosApi;
+
+import java.util.List;
 
 public class CurrencyHelper {
 
@@ -106,5 +112,17 @@ public class CurrencyHelper {
         if (walletStack.getItem() instanceof ItemWallet) {
             ItemWallet.withdrawCurrency(walletStack, withdrawAmount);
         }
+    }
+
+    public static String printCurrency (int amount) {
+        return StringHelper.printCommas(amount) + CUConfig.economy.currencyName.get();
+    }
+
+    public static void addCurrencyLore (List<ITextComponent> tooltip, int currentCurrency) {
+        addCurrencyLore(tooltip, currentCurrency, 0);
+    }
+
+    public static void addCurrencyLore (List<ITextComponent> tooltip, int currentCurrency, int maxCurrency) {
+        tooltip.add(new StringTextComponent(TextFormatting.GRAY + "Currency: " + TextFormatting.GOLD + printCurrency(currentCurrency) + (maxCurrency != 0 ? (" / " + printCurrency(maxCurrency)) : "")));
     }
 }

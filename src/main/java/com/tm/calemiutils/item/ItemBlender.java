@@ -1,9 +1,9 @@
 package com.tm.calemiutils.item;
 
+import com.tm.api.calemicore.util.helper.*;
 import com.tm.calemiutils.config.CUConfig;
 import com.tm.calemiutils.main.CalemiUtils;
 import com.tm.calemiutils.item.base.ItemBase;
-import com.tm.calemiutils.util.helper.*;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -12,10 +12,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.UseAction;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.FoodStats;
-import net.minecraft.util.Hand;
+import net.minecraft.util.*;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -68,7 +65,7 @@ public class ItemBlender extends ItemBase {
         //If the Player is crouching, toggle the blend mode.
         if (playerIn.isCrouching()) {
             ItemHelper.getNBT(stack).putBoolean("blend", !ItemHelper.getNBT(stack).getBoolean("blend"));
-            SoundHelper.playClick(worldIn, playerIn);
+            SoundHelper.playSimpleSound(playerIn, SoundEvents.BLOCK_LEVER_CLICK);
             return new ActionResult<>(ActionResultType.SUCCESS, stack);
         }
 

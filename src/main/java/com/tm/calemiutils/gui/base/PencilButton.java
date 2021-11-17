@@ -1,7 +1,8 @@
 package com.tm.calemiutils.gui.base;
 
+import com.tm.api.calemicore.gui.ItemStackButton;
 import com.tm.calemiutils.init.InitItems;
-import com.tm.calemiutils.util.helper.ItemHelper;
+import com.tm.api.calemicore.util.helper.ItemHelper;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.renderer.ItemRenderer;
 import net.minecraft.item.DyeColor;

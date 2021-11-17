@@ -1,15 +1,17 @@
 package com.tm.calemiutils.gui.base;
 
+import com.tm.api.calemicore.gui.ScreenRect;
 import com.tm.calemiutils.inventory.base.ContainerBase;
 import com.tm.calemiutils.security.ISecurity;
 import com.tm.calemiutils.tileentity.base.ICurrencyNetworkBank;
 import com.tm.calemiutils.tileentity.base.IProgress;
 import com.tm.calemiutils.tileentity.base.TileEntityInventoryBase;
 import com.tm.calemiutils.tileentity.base.TileEntityUpgradable;
-import com.tm.calemiutils.util.helper.MathHelper;
-import com.tm.calemiutils.util.helper.ScreenHelper;
-import com.tm.calemiutils.util.helper.StringHelper;
+import com.tm.api.calemicore.util.helper.MathHelper;
+import com.tm.api.calemicore.util.helper.ScreenHelper;
+import com.tm.api.calemicore.util.helper.StringHelper;
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.tm.calemiutils.util.helper.CurrencyHelper;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -286,12 +288,12 @@ public abstract class ContainerScreenBase<T extends ContainerBase> extends Conta
 
         if (minecraft != null) {
 
-            String fullName = StringHelper.printCommas(currency) + " / " + StringHelper.printCurrency(maxCurrency);
+            String fullName = StringHelper.printCommas(currency) + " / " + CurrencyHelper.printCurrency(maxCurrency);
 
             int fullWidth = minecraft.fontRenderer.getStringWidth(fullName) + 6;
 
             ScreenRect rect = new ScreenRect(getScreenX() - fullWidth, getScreenY() + leftTabOffset, fullWidth, 15);
-            String text = StringHelper.printCurrency(currency);
+            String text = CurrencyHelper.printCurrency(currency);
 
             if (rect.contains(mouseX, mouseY)) {
                 text = fullName;

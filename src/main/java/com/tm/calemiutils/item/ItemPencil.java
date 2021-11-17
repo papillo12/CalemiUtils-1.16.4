@@ -5,10 +5,10 @@ import com.tm.calemiutils.block.BlockBlueprint;
 import com.tm.calemiutils.gui.ScreenPencil;
 import com.tm.calemiutils.init.InitItems;
 import com.tm.calemiutils.item.base.ItemBase;
-import com.tm.calemiutils.util.Location;
-import com.tm.calemiutils.util.helper.ItemHelper;
-import com.tm.calemiutils.util.helper.LoreHelper;
-import com.tm.calemiutils.util.helper.SoundHelper;
+import com.tm.api.calemicore.util.Location;
+import com.tm.api.calemicore.util.helper.ItemHelper;
+import com.tm.api.calemicore.util.helper.LoreHelper;
+import com.tm.api.calemicore.util.helper.SoundHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
@@ -16,10 +16,7 @@ import net.minecraft.item.DyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUseContext;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -117,7 +114,7 @@ public class ItemPencil extends ItemBase {
 
                 if (location.isBlockValidForPlacing()) {
                     location.setBlock(BLUEPRINT.getDefaultState().with(BlockBlueprint.COLOR, DyeColor.byId(getColorId(context.getItem()))));
-                    SoundHelper.playBlueprint(world, player, location);
+                    SoundHelper.playSound(player, SoundEvents.BLOCK_STONE_PLACE, SoundCategory.PLAYERS, 0.9F, 2.0F);
                 }
 
                 return ActionResultType.SUCCESS;

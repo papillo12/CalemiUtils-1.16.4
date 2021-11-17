@@ -1,7 +1,7 @@
 package com.tm.calemiutils.packet;
 
 import com.tm.calemiutils.inventory.ContainerWallet;
-import com.tm.calemiutils.inventory.base.ItemStackInventory;
+import com.tm.api.calemicore.inventory.ItemStackInventory;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.inventory.container.SimpleNamedContainerProvider;
 import net.minecraft.item.ItemStack;

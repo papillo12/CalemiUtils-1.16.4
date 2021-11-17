@@ -4,7 +4,7 @@ import com.tm.calemiutils.init.InitItems;
 import com.tm.calemiutils.item.ItemCoin;
 import com.tm.calemiutils.item.ItemWallet;
 import com.tm.calemiutils.util.helper.CurrencyHelper;
-import com.tm.calemiutils.util.helper.ItemHelper;
+import com.tm.api.calemicore.util.helper.ItemHelper;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

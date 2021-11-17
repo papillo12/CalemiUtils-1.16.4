@@ -1,15 +1,15 @@
 package com.tm.calemiutils.gui;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
-import com.tm.calemiutils.gui.base.ButtonRect;
+import com.tm.api.calemicore.gui.ButtonRect;
 import com.tm.calemiutils.gui.base.ContainerScreenBase;
-import com.tm.calemiutils.gui.base.FakeSlot;
+import com.tm.api.calemicore.gui.FakeSlot;
 import com.tm.calemiutils.inventory.ContainerBlueprintFiller;
 import com.tm.calemiutils.main.CalemiUtils;
 import com.tm.calemiutils.packet.PacketBlueprintFiller;
 import com.tm.calemiutils.tileentity.TileEntityBlueprintFiller;
-import com.tm.calemiutils.util.helper.ItemHelper;
-import com.tm.calemiutils.util.helper.StringHelper;
+import com.tm.api.calemicore.util.helper.ItemHelper;
+import com.tm.api.calemicore.util.helper.StringHelper;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.DyeColor;

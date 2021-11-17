@@ -2,13 +2,13 @@ package com.tm.calemiutils.gui;
 
 import com.tm.calemiutils.main.CalemiUtils;
 import com.tm.calemiutils.block.BlockItemStand;
-import com.tm.calemiutils.gui.base.ButtonRect;
+import com.tm.api.calemicore.gui.ButtonRect;
 import com.tm.calemiutils.gui.base.GuiScreenBase;
-import com.tm.calemiutils.gui.base.TextFieldRect;
+import com.tm.api.calemicore.gui.TextFieldRect;
 import com.tm.calemiutils.packet.PacketItemStand;
 import com.tm.calemiutils.tileentity.TileEntityItemStand;
-import com.tm.calemiutils.util.UnitChatMessage;
-import com.tm.calemiutils.util.helper.ScreenHelper;
+import com.tm.api.calemicore.util.UnitChatMessage;
+import com.tm.api.calemicore.util.helper.ScreenHelper;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;

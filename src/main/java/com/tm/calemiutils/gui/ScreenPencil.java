@@ -4,7 +4,7 @@ import com.tm.calemiutils.main.CalemiUtils;
 import com.tm.calemiutils.gui.base.PencilButton;
 import com.tm.calemiutils.gui.base.GuiScreenBase;
 import com.tm.calemiutils.packet.PacketPencilSetColor;
-import com.tm.calemiutils.util.helper.ScreenHelper;
+import com.tm.api.calemicore.util.helper.ScreenHelper;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.DyeColor;

@@ -1,7 +1,7 @@
 package com.tm.calemiutils.block;
 
 import com.tm.calemiutils.block.base.BlockBase;
-import com.tm.calemiutils.util.Location;
+import com.tm.api.calemicore.util.Location;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;

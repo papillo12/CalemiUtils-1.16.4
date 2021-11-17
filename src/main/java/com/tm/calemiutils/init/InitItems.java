@@ -1,10 +1,11 @@
 package com.tm.calemiutils.init;
 
 import com.tm.calemiutils.main.CUReference;
-import com.tm.calemiutils.block.base.BlockItemBase;
+import com.tm.api.calemicore.block.BlockItemBase;
 import com.tm.calemiutils.item.*;
 import com.tm.calemiutils.item.base.ItemBase;
 import com.tm.calemiutils.block.*;
+import com.tm.calemiutils.main.CalemiUtils;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.Rarity;
@@ -26,7 +27,7 @@ public class InitItems {
     //----- BLOCKS ------\\
 
     public static final RegistryObject<Block> RARITANIUM_ORE = BLOCKS.register("raritanium_ore", BlockRaritaniumOre::new);
-    public static final RegistryObject<Item> RARITANIUM_ORE_ITEM = ITEMS.register("raritanium_ore", () -> new BlockItemBase(RARITANIUM_ORE.get()));
+    public static final RegistryObject<Item> RARITANIUM_ORE_ITEM = ITEMS.register("raritanium_ore", () -> new BlockItemBase(RARITANIUM_ORE.get(), CalemiUtils.TAB));
 
     public static final RegistryObject<Block> COIN_STACK_COPPER = BLOCKS.register("coin_stack_copper", BlockCoinStack::new);
     public static final RegistryObject<Block> COIN_STACK_SILVER = BLOCKS.register("coin_stack_silver", BlockCoinStack::new);
@@ -37,40 +38,40 @@ public class InitItems {
     public static final RegistryObject<Item> BLUEPRINT_ITEM = ITEMS.register("blueprint", BlockBlueprintItem::new);
 
     public static final RegistryObject<Block> IRON_SCAFFOLD = BLOCKS.register("iron_scaffold", BlockIronScaffold::new);
-    public static final RegistryObject<Item> IRON_SCAFFOLD_ITEM = ITEMS.register("iron_scaffold", () -> new BlockItemBase(IRON_SCAFFOLD.get()));
+    public static final RegistryObject<Item> IRON_SCAFFOLD_ITEM = ITEMS.register("iron_scaffold", () -> new BlockItemBase(IRON_SCAFFOLD.get(), CalemiUtils.TAB));
 
     public static final RegistryObject<Block> ITEM_STAND = BLOCKS.register("item_stand", BlockItemStand::new);
-    public static final RegistryObject<Item> ITEM_STAND_ITEM = ITEMS.register("item_stand", () -> new BlockItemBase(ITEM_STAND.get()));
+    public static final RegistryObject<Item> ITEM_STAND_ITEM = ITEMS.register("item_stand", () -> new BlockItemBase(ITEM_STAND.get(), CalemiUtils.TAB));
 
     public static final RegistryObject<Block> BOOK_STAND = BLOCKS.register("book_stand", BlockBookStand::new);
-    public static final RegistryObject<Item> BOOK_STAND_ITEM = ITEMS.register("book_stand", () -> new BlockItemBase(BOOK_STAND.get()));
+    public static final RegistryObject<Item> BOOK_STAND_ITEM = ITEMS.register("book_stand", () -> new BlockItemBase(BOOK_STAND.get(), CalemiUtils.TAB));
 
     public static final RegistryObject<Block> MOB_BEACON = BLOCKS.register("mob_beacon", BlockMobBeacon::new);
-    public static final RegistryObject<Item> MOB_BEACON_ITEM = ITEMS.register("mob_beacon", () -> new BlockItemBase(MOB_BEACON.get()));
+    public static final RegistryObject<Item> MOB_BEACON_ITEM = ITEMS.register("mob_beacon", () -> new BlockItemBase(MOB_BEACON.get(), CalemiUtils.TAB));
 
     public static final RegistryObject<Block> TORCH_PLACER = BLOCKS.register("torch_placer", BlockTorchPlacer::new);
-    public static final RegistryObject<Item> TORCH_PLACER_ITEM = ITEMS.register("torch_placer", () -> new BlockItemBase(TORCH_PLACER.get()));
+    public static final RegistryObject<Item> TORCH_PLACER_ITEM = ITEMS.register("torch_placer", () -> new BlockItemBase(TORCH_PLACER.get(), CalemiUtils.TAB));
 
     public static final RegistryObject<Block> BLUEPRINT_FILLER = BLOCKS.register("blueprint_filler", BlockBlueprintFiller::new);
-    public static final RegistryObject<Item> BLUEPRINT_FILLER_ITEM = ITEMS.register("blueprint_filler", () -> new BlockItemBase(BLUEPRINT_FILLER.get()));
+    public static final RegistryObject<Item> BLUEPRINT_FILLER_ITEM = ITEMS.register("blueprint_filler", () -> new BlockItemBase(BLUEPRINT_FILLER.get(), CalemiUtils.TAB));
 
     public static final RegistryObject<Block> BANK = BLOCKS.register("bank", BlockBank::new);
-    public static final RegistryObject<Item> BANK_ITEM = ITEMS.register("bank", () -> new BlockItemBase(BANK.get()));
+    public static final RegistryObject<Item> BANK_ITEM = ITEMS.register("bank", () -> new BlockItemBase(BANK.get(), CalemiUtils.TAB));
 
     public static final RegistryObject<Block> NETWORK_CABLE_OPAQUE = BLOCKS.register("network_cable_opaque", BlockNetworkCableOpaque::new);
-    public static final RegistryObject<Item> NETWORK_CABLE_OPAQUE_ITEM = ITEMS.register("network_cable_opaque", () -> new BlockItemBase(NETWORK_CABLE_OPAQUE.get()));
+    public static final RegistryObject<Item> NETWORK_CABLE_OPAQUE_ITEM = ITEMS.register("network_cable_opaque", () -> new BlockItemBase(NETWORK_CABLE_OPAQUE.get(), CalemiUtils.TAB));
 
     public static final RegistryObject<Block> NETWORK_CABLE = BLOCKS.register("network_cable", BlockNetworkCable::new);
-    public static final RegistryObject<Item> NETWORK_CABLE_ITEM = ITEMS.register("network_cable", () -> new BlockItemBase(NETWORK_CABLE.get()));
+    public static final RegistryObject<Item> NETWORK_CABLE_ITEM = ITEMS.register("network_cable", () -> new BlockItemBase(NETWORK_CABLE.get(), CalemiUtils.TAB));
 
     public static final RegistryObject<Block> NETWORK_GATE = BLOCKS.register("network_gate", BlockNetworkGate::new);
-    public static final RegistryObject<Item> NETWORK_GATE_ITEM = ITEMS.register("network_gate", () -> new BlockItemBase(NETWORK_GATE.get()));
+    public static final RegistryObject<Item> NETWORK_GATE_ITEM = ITEMS.register("network_gate", () -> new BlockItemBase(NETWORK_GATE.get(), CalemiUtils.TAB));
 
     public static final RegistryObject<Block> TRADING_POST = BLOCKS.register("trading_post", BlockTradingPost::new);
-    public static final RegistryObject<Item> TRADING_POST_ITEM = ITEMS.register("trading_post", () -> new BlockItemBase(TRADING_POST.get()));
+    public static final RegistryObject<Item> TRADING_POST_ITEM = ITEMS.register("trading_post", () -> new BlockItemBase(TRADING_POST.get(), CalemiUtils.TAB));
 
     public static final RegistryObject<Block> MARKET = BLOCKS.register("market", BlockMarket::new);
-    public static final RegistryObject<Item> MARKET_ITEM = ITEMS.register("market", () -> new BlockItemBase(MARKET.get()));
+    public static final RegistryObject<Item> MARKET_ITEM = ITEMS.register("market", () -> new BlockItemBase(MARKET.get(), CalemiUtils.TAB));
 
     //----- ITEMS ------\\
 

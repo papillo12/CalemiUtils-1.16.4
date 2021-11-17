@@ -1,6 +1,6 @@
 package com.tm.calemiutils.tileentity.base;
 
-import com.tm.calemiutils.util.Location;
+import com.tm.api.calemicore.util.Location;
 
 public interface ICurrencyNetworkUnit extends INetwork {
 

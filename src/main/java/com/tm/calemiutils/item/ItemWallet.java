@@ -4,11 +4,12 @@ import com.tm.calemiutils.config.CUConfig;
 import com.tm.calemiutils.main.CalemiUtils;
 import com.tm.calemiutils.integration.curios.CuriosIntegration;
 import com.tm.calemiutils.inventory.ContainerWallet;
-import com.tm.calemiutils.inventory.base.ItemStackInventory;
+import com.tm.api.calemicore.inventory.ItemStackInventory;
 import com.tm.calemiutils.item.base.ItemBase;
-import com.tm.calemiutils.util.UnitChatMessage;
-import com.tm.calemiutils.util.helper.ItemHelper;
-import com.tm.calemiutils.util.helper.LoreHelper;
+import com.tm.api.calemicore.util.UnitChatMessage;
+import com.tm.api.calemicore.util.helper.ItemHelper;
+import com.tm.api.calemicore.util.helper.LoreHelper;
+import com.tm.calemiutils.util.helper.CurrencyHelper;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -38,7 +39,7 @@ public class ItemWallet extends ItemBase {
         LoreHelper.addInformationLore(tooltipList, "Used to store currency in one place.", true);
         LoreHelper.addControlsLore(tooltipList, "Open Inventory", LoreHelper.Type.USE, true);
         LoreHelper.addBlankLine(tooltipList);
-        LoreHelper.addCurrencyLore(tooltipList, getBalance(stack), CUConfig.wallet.walletCurrencyCapacity.get());
+        CurrencyHelper.addCurrencyLore(tooltipList, getBalance(stack), CUConfig.wallet.walletCurrencyCapacity.get());
     }
 
     public static UnitChatMessage getMessage (PlayerEntity player) {

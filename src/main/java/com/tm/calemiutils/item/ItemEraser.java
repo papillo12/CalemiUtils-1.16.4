@@ -3,10 +3,10 @@ package com.tm.calemiutils.item;
 import com.tm.calemiutils.main.CalemiUtils;
 import com.tm.calemiutils.block.BlockBlueprint;
 import com.tm.calemiutils.item.base.ItemBase;
-import com.tm.calemiutils.util.Location;
-import com.tm.calemiutils.util.VeinScan;
-import com.tm.calemiutils.util.helper.LoreHelper;
-import com.tm.calemiutils.util.helper.SoundHelper;
+import com.tm.api.calemicore.util.Location;
+import com.tm.api.calemicore.util.VeinScan;
+import com.tm.api.calemicore.util.helper.LoreHelper;
+import com.tm.api.calemicore.util.helper.SoundHelper;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
@@ -14,6 +14,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUseContext;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
@@ -52,7 +54,7 @@ public class ItemEraser extends ItemBase {
             //Checks if the block clicked is a Blueprint.
             if (location.getBlock() instanceof BlockBlueprint) {
 
-                SoundHelper.playEraser(world, player, location);
+                SoundHelper.playSound(player, SoundEvents.ENTITY_SLIME_ATTACK, SoundCategory.PLAYERS, 0.9F, 1.0F);
 
                 //If the Player is not crouching, remove only one Blueprint.
                 if (!player.isCrouching()) {

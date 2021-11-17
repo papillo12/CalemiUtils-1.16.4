@@ -1,13 +1,12 @@
 package com.tm.calemiutils.block;
 
-import com.tm.calemiutils.block.base.BlockColoredBase;
-import com.tm.calemiutils.config.CUConfig;
-import com.tm.calemiutils.util.Location;
-import com.tm.calemiutils.util.UnitChatMessage;
-import com.tm.calemiutils.util.VeinScan;
-import com.tm.calemiutils.util.helper.InventoryHelper;
-import com.tm.calemiutils.util.helper.ItemHelper;
-import com.tm.calemiutils.util.helper.SoundHelper;
+import com.tm.api.calemicore.block.BlockColoredBase;
+import com.tm.api.calemicore.util.Location;
+import com.tm.api.calemicore.util.UnitChatMessage;
+import com.tm.api.calemicore.util.VeinScan;
+import com.tm.api.calemicore.util.helper.InventoryHelper;
+import com.tm.api.calemicore.util.helper.ItemHelper;
+import com.tm.api.calemicore.util.helper.SoundHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ChestBlock;
@@ -20,6 +19,7 @@ import net.minecraft.item.DyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.text.TextFormatting;
@@ -64,8 +64,8 @@ public class BlockBlueprint extends BlockColoredBase {
         else if (!world.isRemote && player.isCrouching() && heldStack.isEmpty()) {
 
             //Checking if the VeinScan list exceeds the config option. If so, print the max scan size.
-            if (scan.buffer.size() >= CUConfig.blockScans.veinScanMaxSize.get()) {
-                message.printMessage(TextFormatting.GREEN, "There are over " + CUConfig.blockScans.veinScanMaxSize.get() + "+ connected Blueprint");
+            if (scan.buffer.size() >= VeinScan.MAX_SCAN_SIZE) {
+                message.printMessage(TextFormatting.GREEN, "There are over " + VeinScan.MAX_SCAN_SIZE + "+ connected Blueprint");
             }
 
             else message.printMessage(TextFormatting.GREEN, "There are " + ItemHelper.countByStacks(scan.buffer.size()));
@@ -109,7 +109,7 @@ public class BlockBlueprint extends BlockColoredBase {
 
                     if (amountToConsume > 0) {
 
-                        SoundHelper.playDing(player.world, player);
+                        SoundHelper.playSimpleSound(player, SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP);
                         SoundHelper.playBlockPlaceSound(world, player, Block.getBlockFromItem(heldStack.getItem()).getDefaultState(), location);
 
                         if (!world.isRemote) message.printMessage(TextFormatting.GREEN, "Placed " + ItemHelper.countByStacks(amountToConsume));

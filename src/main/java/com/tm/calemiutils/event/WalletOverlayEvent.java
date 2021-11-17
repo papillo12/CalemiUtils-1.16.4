@@ -3,8 +3,8 @@ package com.tm.calemiutils.event;
 import com.tm.calemiutils.config.CUConfig;
 import com.tm.calemiutils.item.ItemWallet;
 import com.tm.calemiutils.util.helper.CurrencyHelper;
-import com.tm.calemiutils.util.helper.ScreenHelper;
-import com.tm.calemiutils.util.helper.StringHelper;
+import com.tm.api.calemicore.util.helper.ScreenHelper;
+import com.tm.api.calemicore.util.helper.StringHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.ClientPlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -49,7 +49,7 @@ public class WalletOverlayEvent {
                     CUConfig.WalletOverlayPosition walletPosition = CUConfig.WalletOverlayPosition.byName(CUConfig.wallet.walletOverlayPosition.get());
 
                     int currency = ItemWallet.getBalance(walletStack);
-                    String currencyStr = StringHelper.printCurrency(currency);
+                    String currencyStr = CurrencyHelper.printCurrency(currency);
 
                     int xOffsetStr = 0;
                     int xOffsetItem = 0;

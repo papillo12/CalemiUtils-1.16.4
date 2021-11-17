@@ -1,8 +1,8 @@
 package com.tm.calemiutils.packet;
 
 import com.tm.calemiutils.tileentity.TileEntityBank;
-import com.tm.calemiutils.util.Location;
-import com.tm.calemiutils.util.helper.ItemHelper;
+import com.tm.api.calemicore.util.Location;
+import com.tm.api.calemicore.util.helper.ItemHelper;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.PacketBuffer;

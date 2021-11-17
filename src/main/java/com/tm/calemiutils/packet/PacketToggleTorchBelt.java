@@ -3,11 +3,12 @@ package com.tm.calemiutils.packet;
 import com.tm.calemiutils.init.InitItems;
 import com.tm.calemiutils.item.ItemTorchBelt;
 import com.tm.calemiutils.main.CalemiUtils;
-import com.tm.calemiutils.util.helper.InventoryHelper;
-import com.tm.calemiutils.util.helper.SoundHelper;
+import com.tm.api.calemicore.util.helper.InventoryHelper;
+import com.tm.api.calemicore.util.helper.SoundHelper;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.fml.network.NetworkEvent;
 import top.theillusivec4.curios.api.CuriosApi;
@@ -55,7 +56,7 @@ public class PacketToggleTorchBelt {
                         ItemTorchBelt.setActive(torchBelt, player.world, player, !active);
                     }
 
-                    SoundHelper.playClick(player.world, player);
+                    SoundHelper.playSimpleSound(player, SoundEvents.BLOCK_LEVER_CLICK);
                     ItemTorchBelt.getMessage(player).printMessage(TextFormatting.GREEN, "All Torch Belts in your inventory have been turned " + (active ? "off." : "on."));
                 }
 

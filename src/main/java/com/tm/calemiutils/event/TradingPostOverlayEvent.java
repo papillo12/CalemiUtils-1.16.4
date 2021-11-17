@@ -1,10 +1,11 @@
 package com.tm.calemiutils.event;
 
 import com.tm.calemiutils.tileentity.TileEntityTradingPost;
-import com.tm.calemiutils.util.Location;
-import com.tm.calemiutils.util.helper.RayTraceHelper;
-import com.tm.calemiutils.util.helper.ScreenHelper;
-import com.tm.calemiutils.util.helper.StringHelper;
+import com.tm.api.calemicore.util.Location;
+import com.tm.api.calemicore.util.helper.RayTraceHelper;
+import com.tm.api.calemicore.util.helper.ScreenHelper;
+import com.tm.api.calemicore.util.helper.StringHelper;
+import com.tm.calemiutils.util.helper.CurrencyHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.ClientPlayerEntity;
 import net.minecraft.client.util.ITooltipFlag;
@@ -45,7 +46,7 @@ public class TradingPostOverlayEvent {
                 int midX = scaledWidth / 2;
                 int midY = scaledHeight / 2;
 
-                RayTraceHelper.BlockTrace blockTrace = RayTraceHelper.RayTraceBlock(world, player, Hand.MAIN_HAND);
+                RayTraceHelper.BlockTrace blockTrace = RayTraceHelper.rayTraceBlock(world, player, Hand.MAIN_HAND);
 
                 //Checks if the trace hit a block.
                 if (blockTrace != null) {
@@ -66,7 +67,7 @@ public class TradingPostOverlayEvent {
                             List<ITextComponent> lore = post.getStackForSale().getTooltip(Minecraft.getInstance().player, ITooltipFlag.TooltipFlags.NORMAL);
 
                             String postName = post.adminMode ? ("Admin Post") : (post.getSecurityProfile().getOwnerName() + "'s Trading Post");
-                            String sellingStr = (post.buyMode ? "Buying " : "Selling ") + StringHelper.printCommas(post.amountForSale) + "x " + post.getStackForSale().getDisplayName().getString() + " for " + (post.salePrice > 0 ? (TextFormatting.GOLD + StringHelper.printCurrency(post.salePrice)) : "free");
+                            String sellingStr = (post.buyMode ? "Buying " : "Selling ") + StringHelper.printCommas(post.amountForSale) + "x " + post.getStackForSale().getDisplayName().getString() + " for " + (post.salePrice > 0 ? (TextFormatting.GOLD + CurrencyHelper.printCurrency(post.salePrice)) : "free");
 
                             list.add(postName);
                             list.add(sellingStr);

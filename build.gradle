@@ -15,18 +15,6 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-repositories {
-    
-    maven {
-        name 'DVS1 Maven FS'
-        url 'http://dvs1.progwml6.com/files/maven'
-    }
-
-    maven {
-        url = "https://maven.theillusivec4.top/"
-    }
-}
-
 version = "${mod_version}"
 group = 'com.tm.calemiutils'
 
@@ -66,7 +54,7 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             property 'forge.logging.console.level', 'debug'
-            args '--mod', 'cspirit', '--all', '--output', file('src/generated/resources/')
+            args '--mod', 'calemiutils', '--all', '--output', file('src/generated/resources/')
 
             mods {
                 examplemod {
@@ -78,6 +66,19 @@ minecraft {
 }
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
+
+repositories {
+
+    maven {
+        name = "JEI"
+        url = "http://dvs1.progwml6.com/files/maven"
+    }
+
+    maven {
+        name = "CURIOS"
+        url = "https://maven.theillusivec4.top/"
+    }
+}
 
 dependencies {
 

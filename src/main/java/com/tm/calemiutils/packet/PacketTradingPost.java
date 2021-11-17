@@ -2,9 +2,10 @@ package com.tm.calemiutils.packet;
 
 import com.tm.calemiutils.config.CUConfig;
 import com.tm.calemiutils.tileentity.TileEntityTradingPost;
-import com.tm.calemiutils.util.Location;
-import com.tm.calemiutils.util.helper.ChatHelper;
-import com.tm.calemiutils.util.helper.StringHelper;
+import com.tm.api.calemicore.util.Location;
+import com.tm.api.calemicore.util.helper.ChatHelper;
+import com.tm.api.calemicore.util.helper.StringHelper;
+import com.tm.calemiutils.util.helper.CurrencyHelper;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
@@ -118,7 +119,7 @@ public class PacketTradingPost {
                                 message.append(" is ").append(tePost.buyMode ? "buying" : "selling");
                                 message.append(" x").append(tePost.amountForSale);
                                 message.append(" ").append(TextFormatting.AQUA).append(tePost.getStackForSale().getDisplayName().getString());
-                                message.append(TextFormatting.RESET).append(" for ").append(tePost.salePrice > 0 ? TextFormatting.GOLD + StringHelper.printCurrency(tePost.salePrice) : "free");
+                                message.append(TextFormatting.RESET).append(" for ").append(tePost.salePrice > 0 ? TextFormatting.GOLD + CurrencyHelper.printCurrency(tePost.salePrice) : "free");
                                 message.append(TextFormatting.RESET).append(" at ").append(TextFormatting.AQUA).append(tePost.getLocation().toString());
 
                                 ChatHelper.broadcastMessage(player.world, message.toString());

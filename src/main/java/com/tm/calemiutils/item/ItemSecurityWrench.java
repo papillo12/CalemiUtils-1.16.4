@@ -5,9 +5,9 @@ import com.tm.calemiutils.main.CalemiUtils;
 import com.tm.calemiutils.event.WrenchEvent;
 import com.tm.calemiutils.item.base.ItemBase;
 import com.tm.calemiutils.security.ISecurity;
-import com.tm.calemiutils.tileentity.base.TileEntityBase;
-import com.tm.calemiutils.util.Location;
-import com.tm.calemiutils.util.helper.LoreHelper;
+import com.tm.calemiutils.tileentity.base.TileEntityCUBase;
+import com.tm.api.calemicore.util.Location;
+import com.tm.api.calemicore.util.helper.LoreHelper;
 import com.tm.calemiutils.util.helper.SecurityHelper;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
@@ -48,7 +48,7 @@ public class ItemSecurityWrench extends ItemBase {
         if (player != null && player.isCrouching()) {
 
             //Checks if the Tile Entity exists and if its a the mod's Tile Entity
-            if (location.getTileEntity() != null && location.getTileEntity() instanceof TileEntityBase) {
+            if (location.getTileEntity() != null && location.getTileEntity() instanceof TileEntityCUBase) {
 
                 //Checks if the Tile Entity has security
                 if (location.getTileEntity() instanceof ISecurity) {

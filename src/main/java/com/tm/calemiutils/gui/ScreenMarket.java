@@ -3,7 +3,7 @@ package com.tm.calemiutils.gui;
 import com.tm.calemiutils.main.CUReference;
 import com.tm.calemiutils.main.CalemiUtils;
 import com.tm.calemiutils.config.MarketItemsFile;
-import com.tm.calemiutils.gui.base.ButtonRect;
+import com.tm.api.calemicore.gui.ButtonRect;
 import com.tm.calemiutils.gui.base.GuiScreenBase;
 import com.tm.calemiutils.gui.base.MarketButton;
 import com.tm.calemiutils.gui.base.MarketTab;
@@ -14,12 +14,12 @@ import com.tm.calemiutils.packet.PacketMarketOptions;
 import com.tm.calemiutils.packet.PacketMarketTrade;
 import com.tm.calemiutils.tileentity.TileEntityBank;
 import com.tm.calemiutils.tileentity.TileEntityMarket;
-import com.tm.calemiutils.util.UnitChatMessage;
+import com.tm.api.calemicore.util.UnitChatMessage;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.tm.calemiutils.util.helper.CurrencyHelper;
-import com.tm.calemiutils.util.helper.InventoryHelper;
-import com.tm.calemiutils.util.helper.ScreenHelper;
-import com.tm.calemiutils.util.helper.StringHelper;
+import com.tm.api.calemicore.util.helper.InventoryHelper;
+import com.tm.api.calemicore.util.helper.ScreenHelper;
+import com.tm.api.calemicore.util.helper.StringHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.SimpleSound;
 import net.minecraft.entity.player.PlayerEntity;
@@ -171,7 +171,7 @@ public class ScreenMarket extends GuiScreenBase {
 
     private void changePurchaseAmount(boolean decrease) {
 
-        int multiplier = (decrease ? -1 : 1) * com.tm.calemiutils.util.helper.MathHelper.getShiftCtrlInt(1, 16, 32, 64);
+        int multiplier = (decrease ? -1 : 1) * com.tm.api.calemicore.util.helper.MathHelper.getShiftCtrlInt(1, 16, 32, 64);
         int amount = MathHelper.clamp(market.purchaseAmount + multiplier, 1, 64);
 
         market.purchaseAmount = amount;
@@ -286,7 +286,7 @@ public class ScreenMarket extends GuiScreenBase {
             //Renders selected stack's name.
             ScreenHelper.drawCenteredString(matrixStack, name, x, yOffset + 18, 0, 0xFFFFFF);
 
-            ScreenHelper.drawCenteredString(matrixStack, (market.buyMode ? "Cost " : "Sell ") + TextFormatting.GOLD + StringHelper.printCurrency(marketItem.value * market.purchaseAmount), x, yOffset + 32, 0, 0xFFFFFF);
+            ScreenHelper.drawCenteredString(matrixStack, (market.buyMode ? "Cost " : "Sell ") + TextFormatting.GOLD + CurrencyHelper.printCurrency(marketItem.value * market.purchaseAmount), x, yOffset + 32, 0, 0xFFFFFF);
 
             ScreenHelper.drawCenteredString(matrixStack, market.purchaseAmount + "x", x, yOffset + 46, 0, 0xFFFFFF);
 
@@ -313,7 +313,7 @@ public class ScreenMarket extends GuiScreenBase {
         if (market.getBank() != null) {
             int x = (int) (((width / 4) * (market.automationMode ? 2.3F : 3)) + xOffset);
             ScreenHelper.drawItemStack(itemRenderer, new ItemStack(InitItems.BANK.get()), x - 8, yOffset);
-            ScreenHelper.drawCenteredString(matrixStack, "Balance: " + TextFormatting.GOLD + StringHelper.printCurrency(market.getBank().storedCurrency), x, yOffset + 18, 0, 0xFFFFFF);
+            ScreenHelper.drawCenteredString(matrixStack, "Balance: " + TextFormatting.GOLD + CurrencyHelper.printCurrency(market.getBank().storedCurrency), x, yOffset + 18, 0, 0xFFFFFF);
             yOffset += 35;
         }
 
@@ -321,7 +321,7 @@ public class ScreenMarket extends GuiScreenBase {
         if (!getCurrentWalletStack().isEmpty()) {
             int x = (int) (((width / 4) * (market.automationMode ? 2.3F : 3)) + xOffset);
             ScreenHelper.drawItemStack(itemRenderer, getCurrentWalletStack(), x - 8, yOffset);
-            ScreenHelper.drawCenteredString(matrixStack, "Balance: " + TextFormatting.GOLD + StringHelper.printCurrency(ItemWallet.getBalance(getCurrentWalletStack())), x, yOffset + 18, 0, 0xFFFFFF);
+            ScreenHelper.drawCenteredString(matrixStack, "Balance: " + TextFormatting.GOLD + CurrencyHelper.printCurrency(ItemWallet.getBalance(getCurrentWalletStack())), x, yOffset + 18, 0, 0xFFFFFF);
         }
 
         automateBtn.setMessage(new StringTextComponent("Automate: " + (market.automationMode ? "ON" : "OFF")));

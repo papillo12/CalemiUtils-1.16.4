@@ -1,8 +1,10 @@
 package com.tm.calemiutils.gui.base;
 
+import com.tm.api.calemicore.gui.ItemStackButton;
 import com.tm.calemiutils.config.MarketItemsFile;
-import com.tm.calemiutils.util.helper.ScreenHelper;
-import com.tm.calemiutils.util.helper.StringHelper;
+import com.tm.api.calemicore.util.helper.ScreenHelper;
+import com.tm.api.calemicore.util.helper.StringHelper;
+import com.tm.calemiutils.util.helper.CurrencyHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.renderer.ItemRenderer;
@@ -60,7 +62,7 @@ public class MarketButton extends ItemStackButton {
         List<ITextComponent> lore = getRenderedStack().getTooltip(Minecraft.getInstance().player, ITooltipFlag.TooltipFlags.NORMAL);
 
         list.add(marketItem.amount + "x " + getRenderedStack().getDisplayName().getString());
-        list.add("Value " + TextFormatting.GOLD + StringHelper.printCurrency(marketItem.value));
+        list.add("Value " + TextFormatting.GOLD + CurrencyHelper.printCurrency(marketItem.value));
 
         if (lore.size() > 1) {
 

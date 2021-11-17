@@ -3,7 +3,7 @@ package com.tm.calemiutils.tileentity;
 import com.tm.calemiutils.gui.ScreenOneSlot;
 import com.tm.calemiutils.init.InitTileEntityTypes;
 import com.tm.calemiutils.inventory.ContainerBookStand;
-import com.tm.calemiutils.tileentity.base.ITileEntityGuiHandler;
+import com.tm.api.calemicore.tileentity.ITileEntityGuiHandler;
 import com.tm.calemiutils.tileentity.base.TileEntityInventoryBase;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerInventory;

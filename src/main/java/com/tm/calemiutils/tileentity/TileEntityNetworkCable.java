@@ -4,11 +4,11 @@ import com.tm.calemiutils.init.InitTileEntityTypes;
 import com.tm.calemiutils.security.ISecurity;
 import com.tm.calemiutils.security.SecurityProfile;
 import com.tm.calemiutils.tileentity.base.INetwork;
-import com.tm.calemiutils.tileentity.base.TileEntityBase;
+import com.tm.calemiutils.tileentity.base.TileEntityCUBase;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.Direction;
 
-public class TileEntityNetworkCable extends TileEntityBase implements INetwork, ISecurity {
+public class TileEntityNetworkCable extends TileEntityCUBase implements INetwork, ISecurity {
 
     private final SecurityProfile profile = new SecurityProfile();
 

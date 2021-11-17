@@ -12,7 +12,6 @@ public class CUConfig {
 
     private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 
-    public static final CategoryTooltips tooltips = new CategoryTooltips(BUILDER);
     public static final CategoryWorldGen worldGen = new CategoryWorldGen(BUILDER);
     public static final CategoryBlockScans blockScans = new CategoryBlockScans(BUILDER);
     public static final CategoryEconomy economy = new CategoryEconomy(BUILDER);
@@ -22,22 +21,6 @@ public class CUConfig {
     public static final ForgeConfigSpec spec = BUILDER.build();
 
     private static final String NEEDED_FOR_SERVERS = "(Only needed on Servers)";
-
-    public static class CategoryTooltips {
-
-        public final ForgeConfigSpec.ConfigValue<Boolean> showInfoOnTooltips;
-        public final ForgeConfigSpec.ConfigValue<Boolean> showControlsOnTooltips;
-
-        public CategoryTooltips (ForgeConfigSpec.Builder builder) {
-
-            builder.push("Tooltips");
-
-            showInfoOnTooltips = builder.comment("Show Information On Tooltips").define("showInfoOnTooltips", true);
-            showControlsOnTooltips = builder.comment("Show Controls On Tooltips").define("showControlsOnTooltips", true);
-
-            builder.pop();
-        }
-    }
 
     public static class CategoryWorldGen {
 
@@ -63,14 +46,12 @@ public class CUConfig {
 
     public static class CategoryBlockScans {
 
-        public final ForgeConfigSpec.ConfigValue<Integer> veinScanMaxSize;
         public final ForgeConfigSpec.ConfigValue<Integer> worldEditMaxSize;
 
         public CategoryBlockScans (ForgeConfigSpec.Builder builder) {
 
             builder.push("BlockScans");
 
-            veinScanMaxSize = builder.comment("Vein Scan Max Size", "The Vein Scan is a system used by Blueprints, Scaffolds and Networks.", "It scans for blocks in a chain. The max size is how many chains will occur. Lower values run faster on servers.", "2304 is the maximum count of blocks in a single Player inventory. There is no real reason to set it above, but the option is there").defineInRange("veinScanMaxSize", 2304, 0, 5000);
             worldEditMaxSize = builder.comment("Brush Max Size", "0 to Disable. The max size of blocks the Brush can place. Lower values run faster on servers.").defineInRange("worldEditMaxSize", 10000, 0, 20000);
 
             builder.pop();

@@ -1,9 +1,9 @@
 package com.tm.calemiutils.inventory.base;
 
-import com.tm.calemiutils.tileentity.base.CUItemHandler;
+import com.tm.api.calemicore.tileentity.CCItemHandler;
 import com.tm.calemiutils.tileentity.base.TileEntityInventoryBase;
 import com.tm.calemiutils.tileentity.base.TileEntityUpgradable;
-import com.tm.calemiutils.util.FunctionalIntReferenceHolder;
+import com.tm.api.calemicore.util.FunctionalIntReferenceHolder;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.IInventory;
@@ -96,7 +96,7 @@ public class ContainerBase extends Container {
     /**
      * Used to add the storage slots of a Tile Entity.
      */
-    protected void addTileEntityStorageInv (CUItemHandler inv, int idOffset, int x, int y, int height) {
+    protected void addTileEntityStorageInv (CCItemHandler inv, int idOffset, int x, int y, int height) {
 
         int id = idOffset;
         for (int i = 0; i < height; i++) {

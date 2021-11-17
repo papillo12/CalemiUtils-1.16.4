@@ -1,7 +1,7 @@
 package com.tm.calemiutils.gui.base;
 
-import com.tm.calemiutils.util.helper.ScreenHelper;
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.tm.api.calemicore.util.helper.ScreenHelper;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Hand;

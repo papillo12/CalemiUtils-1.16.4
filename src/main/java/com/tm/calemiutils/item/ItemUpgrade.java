@@ -2,7 +2,7 @@ package com.tm.calemiutils.item;
 
 import com.tm.calemiutils.main.CalemiUtils;
 import com.tm.calemiutils.item.base.ItemBase;
-import com.tm.calemiutils.util.helper.LoreHelper;
+import com.tm.api.calemicore.util.helper.LoreHelper;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

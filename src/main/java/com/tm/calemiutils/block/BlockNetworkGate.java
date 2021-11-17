@@ -2,8 +2,8 @@ package com.tm.calemiutils.block;
 
 import com.tm.calemiutils.init.InitItems;
 import com.tm.calemiutils.init.InitTileEntityTypes;
-import com.tm.calemiutils.util.Location;
-import com.tm.calemiutils.util.helper.LoreHelper;
+import com.tm.api.calemicore.util.Location;
+import com.tm.api.calemicore.util.helper.LoreHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.ITooltipFlag;

@@ -5,11 +5,11 @@ import com.tm.calemiutils.init.InitTileEntityTypes;
 import com.tm.calemiutils.security.ISecurity;
 import com.tm.calemiutils.security.SecurityProfile;
 import com.tm.calemiutils.tileentity.base.ICurrencyNetworkUnit;
-import com.tm.calemiutils.tileentity.base.TileEntityBase;
-import com.tm.calemiutils.util.Location;
+import com.tm.calemiutils.tileentity.base.TileEntityCUBase;
+import com.tm.api.calemicore.util.Location;
 import com.tm.calemiutils.util.helper.CurrencyHelper;
-import com.tm.calemiutils.util.helper.InventoryHelper;
-import com.tm.calemiutils.util.helper.NetworkHelper;
+import com.tm.api.calemicore.util.helper.InventoryHelper;
+import com.tm.calemiutils.util.NetworkHelper;
 import net.minecraft.block.BlockState;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class TileEntityMarket extends TileEntityBase implements ISecurity, ICurrencyNetworkUnit {
+public class TileEntityMarket extends TileEntityCUBase implements ISecurity, ICurrencyNetworkUnit {
 
     private final SecurityProfile profile = new SecurityProfile();
     private Location bankLocation;

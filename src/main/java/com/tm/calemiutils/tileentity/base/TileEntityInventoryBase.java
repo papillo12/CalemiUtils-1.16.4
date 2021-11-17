@@ -1,5 +1,8 @@
 package com.tm.calemiutils.tileentity.base;
 
+import com.tm.api.calemicore.tileentity.CCItemHandler;
+import com.tm.api.calemicore.tileentity.ITileEntityGuiHandler;
+import com.tm.calemiutils.tileentity.base.TileEntityCUBase;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -22,16 +25,16 @@ import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class TileEntityInventoryBase extends TileEntityBase implements ITileEntityGuiHandler, INamedContainerProvider {
+public abstract class TileEntityInventoryBase extends TileEntityCUBase implements ITileEntityGuiHandler, INamedContainerProvider {
 
     private ITextComponent customName;
-    private final CUItemHandler inventory;
+    private final CCItemHandler inventory;
     public final List<Slot> containerSlots = new ArrayList<>();
 
     public TileEntityInventoryBase (TileEntityType<?> tileEntityType) {
         super(tileEntityType);
 
-        this.inventory = new CUItemHandler(getSizeInventory(), containerSlots);
+        this.inventory = new CCItemHandler(getSizeInventory(), containerSlots);
 
         for (int i = 0; i < inventory.getSlots(); i++) {
             containerSlots.add(null);
@@ -41,7 +44,7 @@ public abstract class TileEntityInventoryBase extends TileEntityBase implements 
     public abstract ITextComponent getDefaultName();
     public abstract int getSizeInventory();
 
-    public CUItemHandler getInventory() {
+    public CCItemHandler getInventory() {
         return this.inventory;
     }
 

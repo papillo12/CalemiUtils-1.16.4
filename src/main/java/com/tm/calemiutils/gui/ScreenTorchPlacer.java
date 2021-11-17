@@ -1,7 +1,7 @@
 package com.tm.calemiutils.gui;
 
 import com.tm.calemiutils.main.CalemiUtils;
-import com.tm.calemiutils.gui.base.ButtonRect;
+import com.tm.api.calemicore.gui.ButtonRect;
 import com.tm.calemiutils.gui.base.ContainerScreenBase;
 import com.tm.calemiutils.inventory.ContainerTorchPlacer;
 import com.tm.calemiutils.packet.PacketEnableTileEntity;

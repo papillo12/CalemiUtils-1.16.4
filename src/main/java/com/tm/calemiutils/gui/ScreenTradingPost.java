@@ -2,16 +2,16 @@ package com.tm.calemiutils.gui;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.tm.calemiutils.config.CUConfig;
-import com.tm.calemiutils.gui.base.ButtonRect;
+import com.tm.api.calemicore.gui.ButtonRect;
 import com.tm.calemiutils.gui.base.ContainerScreenBase;
-import com.tm.calemiutils.gui.base.FakeSlot;
+import com.tm.api.calemicore.gui.FakeSlot;
 import com.tm.calemiutils.inventory.ContainerTradingPost;
 import com.tm.calemiutils.main.CalemiUtils;
 import com.tm.calemiutils.packet.PacketTradingPost;
 import com.tm.calemiutils.tileentity.TileEntityTradingPost;
 import com.tm.calemiutils.tileentity.base.ICurrencyNetworkBank;
-import com.tm.calemiutils.util.helper.ScreenHelper;
-import com.tm.calemiutils.util.helper.StringHelper;
+import com.tm.api.calemicore.util.helper.ScreenHelper;
+import com.tm.api.calemicore.util.helper.StringHelper;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
@@ -42,25 +42,25 @@ public class ScreenTradingPost extends ContainerScreenBase<ContainerTradingPost>
 
         //Subtract Amount
         addButton(new ButtonRect(getScreenX() + 50, getScreenY() + upY, 16, "-", (btn) -> {
-            int i = com.tm.calemiutils.util.helper.MathHelper.getShiftCtrlInt(1, 10, 100, 1000);
+            int i = com.tm.api.calemicore.util.helper.MathHelper.getShiftCtrlInt(1, 10, 100, 1000);
             changeAmount(-i);
         }));
 
         //Add Amount
         addButton(new ButtonRect(getScreenX() + 110, getScreenY() + upY, 16, "+", (btn) -> {
-            int i = com.tm.calemiutils.util.helper.MathHelper.getShiftCtrlInt(1, 10, 100, 1000);
+            int i = com.tm.api.calemicore.util.helper.MathHelper.getShiftCtrlInt(1, 10, 100, 1000);
             changeAmount(i);
         }));
 
         //Subtract Price
         addButton(new ButtonRect(getScreenX() + 50, getScreenY() + downY, 16, "-", (btn) -> {
-            int i = com.tm.calemiutils.util.helper.MathHelper.getShiftCtrlInt(1, 10, 100, 1000);
+            int i = com.tm.api.calemicore.util.helper.MathHelper.getShiftCtrlInt(1, 10, 100, 1000);
             changePrice(-i);
         }));
 
         //Add Price
         addButton(new ButtonRect(getScreenX() + 110, getScreenY() + downY, 16, "+", (btn) -> {
-            int i = com.tm.calemiutils.util.helper.MathHelper.getShiftCtrlInt(1, 10, 100, 1000);
+            int i = com.tm.api.calemicore.util.helper.MathHelper.getShiftCtrlInt(1, 10, 100, 1000);
             changePrice(i);
         }));
 

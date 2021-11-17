@@ -1,11 +1,11 @@
 package com.tm.calemiutils.block;
 
 import com.tm.calemiutils.block.base.BlockBase;
+import com.tm.api.calemicore.util.helper.*;
 import com.tm.calemiutils.config.CUConfig;
 import com.tm.calemiutils.init.InitItems;
-import com.tm.calemiutils.util.Location;
-import com.tm.calemiutils.util.VeinScan;
-import com.tm.calemiutils.util.helper.*;
+import com.tm.api.calemicore.util.Location;
+import com.tm.api.calemicore.util.VeinScan;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;

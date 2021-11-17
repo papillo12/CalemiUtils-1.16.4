@@ -2,16 +2,17 @@ package com.tm.calemiutils.item;
 
 import com.tm.calemiutils.main.CalemiUtils;
 import com.tm.calemiutils.item.base.ItemBase;
-import com.tm.calemiutils.util.Location;
-import com.tm.calemiutils.util.UnitChatMessage;
-import com.tm.calemiutils.util.helper.LoreHelper;
-import com.tm.calemiutils.util.helper.SoundHelper;
+import com.tm.api.calemicore.util.Location;
+import com.tm.api.calemicore.util.UnitChatMessage;
+import com.tm.api.calemicore.util.helper.LoreHelper;
+import com.tm.api.calemicore.util.helper.SoundHelper;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUseContext;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -66,7 +67,7 @@ public class ItemBrush extends ItemBase {
                 if (!world.isRemote) getMessage(player).printMessage(TextFormatting.GREEN, "Second position set to coords: " + location2.x + ", " + location2.y + ", " + location2.z);
             }
 
-            SoundHelper.playClick(world, player);
+            SoundHelper.playSimpleSound(player, SoundEvents.BLOCK_LEVER_CLICK);
             return ActionResultType.SUCCESS;
         }
 

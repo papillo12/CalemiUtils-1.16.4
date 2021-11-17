@@ -3,7 +3,7 @@ package com.tm.calemiutils.inventory;
 import com.tm.calemiutils.init.InitContainerTypes;
 import com.tm.calemiutils.init.InitItems;
 import com.tm.calemiutils.inventory.base.ContainerBase;
-import com.tm.calemiutils.inventory.base.SlotFilter;
+import com.tm.api.calemicore.inventory.SlotFilter;
 import com.tm.calemiutils.tileentity.TileEntityBookStand;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.network.PacketBuffer;

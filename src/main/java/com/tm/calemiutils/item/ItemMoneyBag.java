@@ -1,11 +1,12 @@
 package com.tm.calemiutils.item;
 
+import com.tm.calemiutils.init.InitSounds;
 import com.tm.calemiutils.main.CalemiUtils;
 import com.tm.calemiutils.init.InitItems;
 import com.tm.calemiutils.item.base.ItemBase;
-import com.tm.calemiutils.util.helper.ItemHelper;
-import com.tm.calemiutils.util.helper.LoreHelper;
-import com.tm.calemiutils.util.helper.SoundHelper;
+import com.tm.api.calemicore.util.helper.ItemHelper;
+import com.tm.api.calemicore.util.helper.LoreHelper;
+import com.tm.api.calemicore.util.helper.SoundHelper;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -13,6 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 
@@ -48,12 +50,12 @@ public class ItemMoneyBag extends ItemBase {
         stack.shrink(1);
 
         if (isRich) {
-            SoundHelper.playMoneyBagRichOpen(world, player);
+            SoundHelper.playSound(player, InitSounds.MONEY_BAG_RICH.get(), SoundCategory.PLAYERS, 0.1F, 1.0F);
             giveCoins(world, player, 75, 300);
         }
 
         else {
-            SoundHelper.playMoneyBagCheapOpen(world, player);
+            SoundHelper.playSound(player, InitSounds.MONEY_BAG_CHEAP.get(), SoundCategory.PLAYERS, 0.1F, 1.0F);
             giveCoins(world, player, 10, 100);
         }
 

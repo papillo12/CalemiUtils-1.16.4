@@ -3,11 +3,11 @@ package com.tm.calemiutils.item;
 import com.tm.calemiutils.main.CalemiUtils;
 import com.tm.calemiutils.init.InitEnchantments;
 import com.tm.calemiutils.init.InitItems;
-import com.tm.calemiutils.util.Location;
-import com.tm.calemiutils.util.VeinScan;
-import com.tm.calemiutils.util.helper.LoreHelper;
-import com.tm.calemiutils.util.helper.RayTraceHelper;
-import com.tm.calemiutils.util.helper.WorldEditHelper;
+import com.tm.api.calemicore.util.Location;
+import com.tm.api.calemicore.util.VeinScan;
+import com.tm.api.calemicore.util.helper.LoreHelper;
+import com.tm.api.calemicore.util.helper.RayTraceHelper;
+import com.tm.api.calemicore.util.helper.WorldEditHelper;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Multimap;
@@ -108,7 +108,7 @@ public class ItemSledgehammer extends PickaxeItem {
 
             player.swingArm(hand);
 
-            RayTraceHelper.BlockTrace blockTrace = RayTraceHelper.RayTraceBlock(world, player, hand);
+            RayTraceHelper.BlockTrace blockTrace = RayTraceHelper.rayTraceBlock(world, player, hand);
 
             //Checks if the ray trace hit a Block.
             if (blockTrace != null) {
@@ -234,7 +234,7 @@ public class ItemSledgehammer extends PickaxeItem {
     }
 
     /**
-     * Used to damage the Sledgehammer if its not a Starlight one.
+     * Used to damage the Sledgehammer if it's not a Starlight one.
      */
     private void damageHammer(ItemStack stack, LivingEntity livingEntity) {
         if (stack.getItem() != InitItems.SLEDGEHAMMER_STARLIGHT.get()) stack.damageItem(1, livingEntity, (i) -> i.sendBreakAnimation(EquipmentSlotType.MAINHAND));

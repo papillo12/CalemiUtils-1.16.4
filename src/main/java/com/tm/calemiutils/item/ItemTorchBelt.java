@@ -1,11 +1,11 @@
 package com.tm.calemiutils.item;
 
+import com.tm.api.calemicore.util.helper.*;
 import com.tm.calemiutils.main.CalemiUtils;
 import com.tm.calemiutils.integration.curios.CuriosIntegration;
 import com.tm.calemiutils.item.base.ItemBase;
-import com.tm.calemiutils.util.Location;
-import com.tm.calemiutils.util.UnitChatMessage;
-import com.tm.calemiutils.util.helper.*;
+import com.tm.api.calemicore.util.Location;
+import com.tm.api.calemicore.util.UnitChatMessage;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
@@ -16,6 +16,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -76,7 +77,7 @@ public class ItemTorchBelt extends ItemBase {
     public static void setActive(ItemStack stack, World world, PlayerEntity player, boolean state) {
 
         ItemHelper.getNBT(stack).putBoolean("on", state);
-        SoundHelper.playClick(world, player);
+        SoundHelper.playSimpleSound(player, SoundEvents.BLOCK_LEVER_CLICK);
     }
 
     /**

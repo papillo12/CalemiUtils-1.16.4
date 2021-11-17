@@ -1,8 +1,12 @@
 package com.tm.calemiutils.gui;
 
+import com.tm.api.calemicore.util.helper.ItemHelper;
+import com.tm.api.calemicore.util.helper.MathHelper;
+import com.tm.api.calemicore.util.helper.ScreenHelper;
+import com.tm.api.calemicore.util.helper.StringHelper;
 import com.tm.calemiutils.config.CUConfig;
 import com.tm.calemiutils.main.CalemiUtils;
-import com.tm.calemiutils.gui.base.ButtonRect;
+import com.tm.api.calemicore.gui.ButtonRect;
 import com.tm.calemiutils.gui.base.ContainerScreenBase;
 import com.tm.calemiutils.init.InitItems;
 import com.tm.calemiutils.inventory.ContainerWallet;

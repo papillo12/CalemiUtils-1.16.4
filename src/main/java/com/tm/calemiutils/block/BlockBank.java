@@ -2,7 +2,7 @@ package com.tm.calemiutils.block;
 
 import com.tm.calemiutils.block.base.BlockInventoryContainerBase;
 import com.tm.calemiutils.init.InitTileEntityTypes;
-import com.tm.calemiutils.util.helper.LoreHelper;
+import com.tm.api.calemicore.util.helper.LoreHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;

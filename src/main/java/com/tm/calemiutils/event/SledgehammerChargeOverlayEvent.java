@@ -1,8 +1,8 @@
 package com.tm.calemiutils.event;
 
 import com.tm.calemiutils.item.ItemSledgehammer;
-import com.tm.calemiutils.util.helper.MathHelper;
-import com.tm.calemiutils.util.helper.ScreenHelper;
+import com.tm.api.calemicore.util.helper.MathHelper;
+import com.tm.api.calemicore.util.helper.ScreenHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.ClientPlayerEntity;
 import net.minecraft.item.ItemStack;

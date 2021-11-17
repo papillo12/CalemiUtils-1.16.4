@@ -1,8 +1,10 @@
 package com.tm.calemiutils.event;
 
+import com.tm.calemiutils.init.InitSounds;
 import com.tm.calemiutils.item.ItemCoin;
-import com.tm.calemiutils.util.helper.SoundHelper;
+import com.tm.api.calemicore.util.helper.SoundHelper;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.SoundCategory;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
@@ -18,7 +20,7 @@ public class CoinPickupSoundEvent {
 
             if (event.getStack().getItem() instanceof ItemCoin) {
 
-                SoundHelper.playCoin(event.getOriginalEntity().world, (PlayerEntity) event.getEntity());
+                SoundHelper.playSound(event.getPlayer(), InitSounds.COIN.get(), SoundCategory.PLAYERS, 0.1F, 1F);
             }
         }
     }

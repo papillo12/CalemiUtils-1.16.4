@@ -1,7 +1,9 @@
 package com.tm.calemiutils.item;
 
-import com.tm.calemiutils.block.base.BlockItemBase;
-import com.tm.calemiutils.util.helper.StringHelper;
+import com.tm.api.calemicore.block.BlockItemBase;
+import com.tm.api.calemicore.util.helper.StringHelper;
+import com.tm.calemiutils.main.CalemiUtils;
+import com.tm.calemiutils.util.helper.CurrencyHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.ITooltipFlag;
@@ -22,16 +24,16 @@ public class ItemCoin extends BlockItemBase {
     public final int value;
 
     public ItemCoin(int value, Block coinStack) {
-        super(coinStack, true);
+        super(coinStack, CalemiUtils.TAB);
         this.value = value;
     }
 
     @Override
     public void addInformation (ItemStack stack, @Nullable World world, List<ITextComponent> tooltipList, ITooltipFlag advanced) {
-        tooltipList.add(new StringTextComponent(TextFormatting.GRAY + "Value (1): " + TextFormatting.GOLD + StringHelper.printCurrency(value)));
+        tooltipList.add(new StringTextComponent(TextFormatting.GRAY + "Value (1): " + TextFormatting.GOLD + CurrencyHelper.printCurrency(value)));
 
         if (stack.getCount() > 1) {
-            tooltipList.add(new StringTextComponent(TextFormatting.GRAY + "Value (" + stack.getCount() + "): " + TextFormatting.GOLD + StringHelper.printCurrency(value * stack.getCount())));
+            tooltipList.add(new StringTextComponent(TextFormatting.GRAY + "Value (" + stack.getCount() + "): " + TextFormatting.GOLD + CurrencyHelper.printCurrency(value * stack.getCount())));
         }
     }
 

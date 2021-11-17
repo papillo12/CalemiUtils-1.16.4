@@ -1,8 +1,8 @@
 package com.tm.calemiutils.event;
 
 import com.tm.calemiutils.security.ISecurity;
-import com.tm.calemiutils.tileentity.base.TileEntityBase;
-import com.tm.calemiutils.util.Location;
+import com.tm.calemiutils.tileentity.base.TileEntityCUBase;
+import com.tm.api.calemicore.util.Location;
 import com.tm.calemiutils.util.helper.SecurityHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.tileentity.TileEntity;
@@ -25,12 +25,12 @@ public class SecurityEvent {
         TileEntity tileEntity = event.getWorld().getTileEntity(event.getPos());
 
         //Checks if the Entity is a Player and the Location is a TileEntityBase and implements ISecurity.
-        if (event.getEntity() instanceof PlayerEntity && tileEntity instanceof TileEntityBase && tileEntity instanceof ISecurity) {
+        if (event.getEntity() instanceof PlayerEntity && tileEntity instanceof TileEntityCUBase && tileEntity instanceof ISecurity) {
 
             ISecurity security = (ISecurity) tileEntity;
 
             security.getSecurityProfile().setOwner((PlayerEntity) event.getEntity());
-            ((TileEntityBase) tileEntity).markForUpdate();
+            ((TileEntityCUBase) tileEntity).markForUpdate();
         }
     }
 
@@ -61,7 +61,7 @@ public class SecurityEvent {
 
             TileEntity tileEntity = event.getWorld().getTileEntity(pos);
 
-            if (tileEntity instanceof TileEntityBase && tileEntity instanceof ISecurity) {
+            if (tileEntity instanceof TileEntityCUBase && tileEntity instanceof ISecurity) {
                 securedBlocksFound.add(pos);
             }
         }
