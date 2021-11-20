@@ -1,4 +1,4 @@
-package com.tm.calemiutils.util;
+package com.tm.calemiutils.util.helper;
 
 import com.tm.calemiutils.tileentity.TileEntityBank;
 import com.tm.api.calemicore.util.Location;

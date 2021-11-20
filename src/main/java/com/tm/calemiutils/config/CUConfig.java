@@ -16,6 +16,7 @@ public class CUConfig {
     public static final CategoryBlockScans blockScans = new CategoryBlockScans(BUILDER);
     public static final CategoryEconomy economy = new CategoryEconomy(BUILDER);
     public static final CategoryWallet wallet = new CategoryWallet(BUILDER);
+    public static final CategoryLinkBook linkBook = new CategoryLinkBook(BUILDER);
     public static final CategoryMisc misc = new CategoryMisc(BUILDER);
 
     public static final ForgeConfigSpec spec = BUILDER.build();
@@ -34,11 +35,20 @@ public class CUConfig {
 
             builder.push("WorldGen");
 
-            raritaniumOreGen = builder.comment("Raritanium Ore Gen").define("raritaniumOreGen", true);
-            raritaniumVeinsPerChunk = builder.comment("Raritanium Veins Per Chunk").define("raritaniumOreVeinsPerChunk", 4);
-            raritaniumVeinSize = builder.comment("Raritanium Vein Size").define("raritaniumVeinSize", 8);
-            raritaniumOreGenMinY = builder.comment("Raritanium Ore Min Y").define("raritaniumOreGenMinY", 0);
-            raritaniumOreGenMaxY = builder.comment("Raritanium Ore Max Y").define("raritaniumOreGenMaxY", 30);
+            raritaniumOreGen = builder.comment("Raritanium Ore Gen")
+                    .define("raritaniumOreGen", true);
+
+            raritaniumVeinsPerChunk = builder.comment("Raritanium Veins Per Chunk")
+                    .define("raritaniumOreVeinsPerChunk", 4);
+
+            raritaniumVeinSize = builder.comment("Raritanium Vein Size")
+                    .define("raritaniumVeinSize", 8);
+
+            raritaniumOreGenMinY = builder.comment("Raritanium Ore Min Y")
+                    .define("raritaniumOreGenMinY", 0);
+
+            raritaniumOreGenMaxY = builder.comment("Raritanium Ore Max Y")
+                    .define("raritaniumOreGenMaxY", 30);
 
             builder.pop();
         }
@@ -52,7 +62,8 @@ public class CUConfig {
 
             builder.push("BlockScans");
 
-            worldEditMaxSize = builder.comment("Brush Max Size", "0 to Disable. The max size of blocks the Brush can place. Lower values run faster on servers.").defineInRange("worldEditMaxSize", 10000, 0, 20000);
+            worldEditMaxSize = builder.comment("Brush Max Size", "0 to Disable. The max size of blocks the Brush can place. Lower values run faster on servers.")
+                    .defineInRange("worldEditMaxSize", 10000, 0, 20000);
 
             builder.pop();
         }
@@ -72,13 +83,26 @@ public class CUConfig {
 
             builder.push("Economy");
 
-            currencyName = builder.comment("Currency Name").define("currencyName", "RC");
-            bankCurrencyCapacity = builder.comment("Bank Currency Capacity", "The max amount of currency the Bank can store.").defineInRange("bankCurrencyCapacity", 1000000, 0, 99999999);
-            postCurrencyCapacity = builder.comment("Trading Post Currency Capacity", "The max amount of currency the Trading Post can store.").defineInRange("postCurrencyCapacity", 1000000, 0, 99999999);
-            cheapMoneyBagMin = builder.comment("Cheap Money Bag Minimum Coins Amount", "The minimum of the random amount of currency the Cheap Money Bag gives.").defineInRange("cheapMoneyBagMin", 10, 0, 10000);
-            cheapMoneyBagMax = builder.comment("Cheap Money Bag Maximum Coins Amount", "The maximum of the random amount of currency the Cheap Money Bag gives.").defineInRange("cheapMoneyBagMax", 100, 0, 10000);
-            richMoneyBagMin = builder.comment("Rich Money Bag Minimum Coins Amount", "The minimum of the random amount of currency the Rich Money Bag gives.").defineInRange("richMoneyBagMin", 75, 0, 10000);
-            richMoneyBagMax = builder.comment("Rich Money Bag Maximum Coins Amount", "The maximum of the random amount of currency the Rich Money Bag gives.").defineInRange("richMoneyBagMax", 300, 0, 10000);
+            currencyName = builder.comment("Currency Name")
+                    .define("currencyName", "RC");
+
+            bankCurrencyCapacity = builder.comment("Bank Currency Capacity", "The max amount of currency the Bank can store.")
+                    .defineInRange("bankCurrencyCapacity", 1000000, 0, 99999999);
+
+            postCurrencyCapacity = builder.comment("Trading Post Currency Capacity", "The max amount of currency the Trading Post can store.")
+                    .defineInRange("postCurrencyCapacity", 1000000, 0, 99999999);
+
+            cheapMoneyBagMin = builder.comment("Cheap Money Bag Minimum Coins Amount", "The minimum of the random amount of currency the Cheap Money Bag gives.")
+                    .defineInRange("cheapMoneyBagMin", 10, 0, 10000);
+
+            cheapMoneyBagMax = builder.comment("Cheap Money Bag Maximum Coins Amount", "The maximum of the random amount of currency the Cheap Money Bag gives.")
+                    .defineInRange("cheapMoneyBagMax", 100, 0, 10000);
+
+            richMoneyBagMin = builder.comment("Rich Money Bag Minimum Coins Amount", "The minimum of the random amount of currency the Rich Money Bag gives.")
+                    .defineInRange("richMoneyBagMin", 75, 0, 10000);
+
+            richMoneyBagMax = builder.comment("Rich Money Bag Maximum Coins Amount", "The maximum of the random amount of currency the Rich Money Bag gives.")
+                    .defineInRange("richMoneyBagMax", 300, 0, 10000);
 
             builder.pop();
         }
@@ -94,9 +118,38 @@ public class CUConfig {
 
             builder.push("Wallet");
 
-            walletCurrencyCapacity = builder.comment("Wallet Currency Capacity", "The max amount of currency the Wallet can store.").defineInRange("walletCurrencyCapacity", 1000000, 0, 99999999);
-            walletOverlay = builder.comment("Render Wallet Currency Overlay", "Enable this render an overlay on your game screen showing your Wallet stats.").define("walletOverlay", true);
-            walletOverlayPosition = builder.comment("Wallet Currency Overlay Position", "The position of the screen of the Wallet overlay", "The valid values are {TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT}").define("walletOverlayPosition", WalletOverlayPosition.TOP_LEFT.toString());
+            walletCurrencyCapacity = builder.comment("Wallet Currency Capacity", "The max amount of currency the Wallet can store.")
+                    .defineInRange("walletCurrencyCapacity", 1000000, 0, 99999999);
+
+            walletOverlay = builder.comment("Render Wallet Currency Overlay", "Enable this render an overlay on your game screen showing your Wallet stats.")
+                    .define("walletOverlay", true);
+
+            walletOverlayPosition = builder
+                    .comment("Wallet Currency Overlay Position", "The position of the screen of the Wallet overlay", "The valid values are {TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT}")
+                    .define("walletOverlayPosition", WalletOverlayPosition.TOP_LEFT.toString());
+
+            builder.pop();
+        }
+    }
+
+    public static class CategoryLinkBook {
+
+        public final ForgeConfigSpec.ConfigValue<Boolean> linkBookTravel;
+        public final ForgeConfigSpec.ConfigValue<Boolean> linkBookPortableTravel;
+        public final ForgeConfigSpec.ConfigValue<Double> linkBookTravelCostPerChunk;
+
+        public CategoryLinkBook (ForgeConfigSpec.Builder builder) {
+
+            builder.push("Link Book");
+
+            linkBookTravel = builder.comment("Link Book Travel", "Enable this allow traveling via Link Book or Link Portal.")
+                    .define("linkBookTravel", true);
+
+            linkBookPortableTravel = builder.comment("Link Book Portable Travel", "Enable this allow traveling via Link Book while in hand.")
+                    .define("linkBookPortableTravel", true);
+
+            linkBookTravelCostPerChunk = builder.comment("Link Book Travel Cost Per Chunk", "The cost per chunk when traveling with via Link Book or Link Portal. Set value to 0 for free travel.")
+                    .defineInRange("linkBookTravelCostPerChunk", 1.0D, 0D, 10000D);
 
             builder.pop();
         }
@@ -116,13 +169,26 @@ public class CUConfig {
 
             builder.push("Misc");
 
-            useSecurity = builder.comment("Use Security", "Disable this to allow everyone access to anyone's Blocks.").define("useSecurity", true);
-            scaffoldMaxHeightTp = builder.comment("Scaffold Max Height Teleport", "0 to Disable. The max height you can teleport to the top or bottom of a scaffold.").defineInRange("scaffoldMaxHeightTp", 256, 0, 256);
-            torchPlacerMaxRange = builder.comment("Torch Placer Max Range", "The max range the Torch Placer can place torches.").defineInRange("torchPlacerMaxRange", 48, 10, 48);
-            blueprintFillerMaxScan = builder.comment("Blueprint Filler Max Scan Range", "The max amount of Blueprint the Blueprint Filler can scan.").defineInRange("blueprintFillerMaxScan", 100000, 1, 1000000);
-            blenderMaxJuice = builder.comment("Blender Max Juice", "The max height amount of juice the Blender can store.").defineInRange("blenderMaxJuice", 1000, 0, 1000000);
-            tradingPostBroadcasts = builder.comment("Trading Post Broadcasts", "Disable this to disallow Players broadcasting their Trading Posts").define("tradingPostBroadcasts", true);
-            tradingPostBroadcastDelay = builder.comment("Trading Post Broadcast Delay", "The amount of seconds before a Player can broadcasts their Trading Post.").defineInRange("tradingPostBroadcastDelay", 10, 0, 3600);
+            useSecurity = builder.comment("Use Security", "Disable this to allow everyone access to anyone's Blocks.")
+                    .define("useSecurity", true);
+
+            scaffoldMaxHeightTp = builder.comment("Scaffold Max Height Teleport", "0 to Disable. The max height you can teleport to the top or bottom of a scaffold.")
+                    .defineInRange("scaffoldMaxHeightTp", 256, 0, 256);
+
+            torchPlacerMaxRange = builder.comment("Torch Placer Max Range", "The max range the Torch Placer can place torches.")
+                    .defineInRange("torchPlacerMaxRange", 48, 10, 48);
+
+            blueprintFillerMaxScan = builder.comment("Blueprint Filler Max Scan Range", "The max amount of Blueprint the Blueprint Filler can scan.")
+                    .defineInRange("blueprintFillerMaxScan", 100000, 1, 1000000);
+
+            blenderMaxJuice = builder.comment("Blender Max Juice", "The max height amount of juice the Blender can store.")
+                    .defineInRange("blenderMaxJuice", 1000, 0, 1000000);
+
+            tradingPostBroadcasts = builder.comment("Trading Post Broadcasts", "Disable this to disallow Players broadcasting their Trading Posts")
+                    .define("tradingPostBroadcasts", true);
+
+            tradingPostBroadcastDelay = builder.comment("Trading Post Broadcast Delay", "The amount of seconds before a Player can broadcasts their Trading Post.")
+                    .defineInRange("tradingPostBroadcastDelay", 10, 0, 3600);
 
             builder.pop();
         }

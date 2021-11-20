@@ -96,6 +96,7 @@ public class CalemiUtils {
         network.registerMessage(++id, PacketBlueprintFiller.class, PacketBlueprintFiller::toBytes, PacketBlueprintFiller::new, PacketBlueprintFiller::handle);
         network.registerMessage(++id, PacketMarketOptions.class, PacketMarketOptions::toBytes, PacketMarketOptions::new, PacketMarketOptions::handle);
         network.registerMessage(++id, PacketMarketTrade.class, PacketMarketTrade::toBytes, PacketMarketTrade::new, PacketMarketTrade::handle);
+        network.registerMessage(++id, PacketPortalProjector.class, PacketPortalProjector::toBytes, PacketPortalProjector::new, PacketPortalProjector::handle);
 
         MinecraftForge.EVENT_BUS.register(new WrenchEvent());
         MinecraftForge.EVENT_BUS.register(new SecurityEvent());
@@ -110,6 +111,7 @@ public class CalemiUtils {
         MinecraftForge.EVENT_BUS.register(new WrenchLoreEvent());
         MinecraftForge.EVENT_BUS.register(new SledgehammerChargeOverlayEvent());
         MinecraftForge.EVENT_BUS.register(new TradingPostOverlayEvent());
+        MinecraftForge.EVENT_BUS.register(new LinkPortalOverlayEvent());
         MinecraftForge.EVENT_BUS.register(new WalletOverlayEvent());
         MinecraftForge.EVENT_BUS.register(new WalletKeyEvent());
         MinecraftForge.EVENT_BUS.register(new TorchBeltKeyEvent());
@@ -120,6 +122,7 @@ public class CalemiUtils {
         RenderTypeLookup.setRenderLayer(InitItems.BOOK_STAND.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(InitItems.ITEM_STAND.get(), RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(InitItems.TRADING_POST.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(InitItems.LINK_PORTAL.get(), RenderType.getTranslucent());
 
         ScreenManager.registerFactory(InitContainerTypes.WALLET.get(), ScreenWallet::new);
         ScreenManager.registerFactory(InitContainerTypes.TORCH_PLACER.get(), ScreenTorchPlacer::new);
@@ -128,6 +131,7 @@ public class CalemiUtils {
         ScreenManager.registerFactory(InitContainerTypes.ITEM_STAND.get(), ScreenOneSlot::new);
         ScreenManager.registerFactory(InitContainerTypes.BANK.get(), ScreenBank::new);
         ScreenManager.registerFactory(InitContainerTypes.TRADING_POST.get(), ScreenTradingPost::new);
+        ScreenManager.registerFactory(InitContainerTypes.PORTAL_PROJECTOR.get(), ScreenPortalProjector::new);
 
         ClientRegistry.bindTileEntityRenderer(InitTileEntityTypes.BOOK_STAND.get(), RenderBookStand::new);
         ClientRegistry.bindTileEntityRenderer(InitTileEntityTypes.ITEM_STAND.get(), RenderItemStand::new);

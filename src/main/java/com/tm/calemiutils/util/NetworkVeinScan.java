@@ -1,4 +1,4 @@
-package com.tm.calemiutils.util.helper;
+package com.tm.calemiutils.util;
 
 import com.tm.api.calemicore.util.Location;
 import com.tm.api.calemicore.util.VeinScan;

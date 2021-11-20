@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RMR",
+    "RBR",
+    "RMR"
+  ],
+  "key": {
+    "R": {
+      "item": "calemiutils:raritanium_block"
+    },
+    "M": {
+      "item": "calemiutils:motor"
+    },
+    "B": {
+      "item": "calemiutils:book_stand"
+    }
+  },
+  "result": {
+    "item": "calemiutils:portal_projector",
+    "count": 1
+  }
+}

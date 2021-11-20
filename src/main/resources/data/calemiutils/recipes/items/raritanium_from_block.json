@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "calemiutils:raritanium_block"
+    }
+  ],
+  "result": {
+    "item": "calemiutils:raritanium",
+    "count": 9
+  }
+}

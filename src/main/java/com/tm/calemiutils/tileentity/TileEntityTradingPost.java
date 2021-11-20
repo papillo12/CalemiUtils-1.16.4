@@ -11,7 +11,7 @@ import com.tm.calemiutils.tileentity.base.TileEntityInventoryBase;
 import com.tm.api.calemicore.util.Location;
 import com.tm.api.calemicore.util.UnitChatMessage;
 import com.tm.api.calemicore.util.helper.ItemHelper;
-import com.tm.calemiutils.util.NetworkHelper;
+import com.tm.calemiutils.util.helper.NetworkHelper;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerEntity;

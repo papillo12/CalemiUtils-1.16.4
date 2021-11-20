@@ -19,4 +19,5 @@ public class InitContainerTypes {
     public static final RegistryObject<ContainerType<ContainerItemStand>> ITEM_STAND = CONTAINER_TYPES.register("item_stand", () -> IForgeContainerType.create(ContainerItemStand::new));
     public static final RegistryObject<ContainerType<ContainerBank>> BANK = CONTAINER_TYPES.register("bank", () -> IForgeContainerType.create(ContainerBank::new));
     public static final RegistryObject<ContainerType<ContainerTradingPost>> TRADING_POST = CONTAINER_TYPES.register("trading_post", () -> IForgeContainerType.create(ContainerTradingPost::new));
+    public static final RegistryObject<ContainerType<ContainerPortalProjector>> PORTAL_PROJECTOR = CONTAINER_TYPES.register("portal_projector", () -> IForgeContainerType.create(ContainerPortalProjector::new));
 }

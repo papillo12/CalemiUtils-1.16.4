@@ -11,7 +11,7 @@ import com.tm.calemiutils.tileentity.base.ICurrencyNetworkBank;
 import com.tm.calemiutils.tileentity.base.ICurrencyNetworkUnit;
 import com.tm.calemiutils.tileentity.base.TileEntityInventoryBase;
 import com.tm.api.calemicore.util.Location;
-import com.tm.calemiutils.util.helper.NetworkVeinScan;
+import com.tm.calemiutils.util.NetworkVeinScan;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;

@@ -19,6 +19,7 @@ public class PacketLinkBook {
     private BlockPos pos;
     private float yaw;
     private String dimName;
+    private ItemLinkBookLocation.TravelMethod travelMethod;
 
     public PacketLinkBook () {}
 
@@ -30,41 +31,42 @@ public class PacketLinkBook {
      * @param pos The linked location.
      * @param dimName The linked dimension.
      */
-    public PacketLinkBook (String command, Hand hand, String name, BlockPos pos, float yaw, String dimName) {
+    public PacketLinkBook (String command, Hand hand, String name, BlockPos pos, float yaw, String dimName, ItemLinkBookLocation.TravelMethod travelMethod) {
         this.command = command;
         this.offHand = (hand != Hand.MAIN_HAND);
         this.name = name;
         this.pos = pos;
         this.yaw = yaw;
         this.dimName = dimName;
+        this.travelMethod = travelMethod;
     }
 
     /**
      * Use this constructor to name the Link Book
      */
     public PacketLinkBook (String command, Hand hand, String name) {
-        this(command, hand, name, new BlockPos(0, 0, 0), 0, "");
+        this(command, hand, name, new BlockPos(0, 0, 0), 0, "", ItemLinkBookLocation.TravelMethod.INVALID);
     }
 
     /**
      * Use this constructor to bind a Location to the Link Book
      */
     public PacketLinkBook (String command, Hand hand, BlockPos pos) {
-        this(command, hand, "", pos, 0, "");
+        this(command, hand, "", pos, 0, "", ItemLinkBookLocation.TravelMethod.INVALID);
     }
 
     /**
      * Use this constructor to reset the Lick Book's data.
      */
     public PacketLinkBook (String command, Hand hand) {
-        this(command, hand, "", new BlockPos(0, 0, 0), 0, "");
+        this(command, hand, "", new BlockPos(0, 0, 0), 0, "", ItemLinkBookLocation.TravelMethod.INVALID);
     }
 
     /**
      * Use this constructor to teleport to the Link Book's linked location.
      */
-    public PacketLinkBook (String command, Hand hand, BlockPos pos, float yaw, String dimName) {
-        this(command, hand, "", pos, yaw, dimName);
+    public PacketLinkBook (String command, Hand hand, BlockPos pos, float yaw, String dimName, ItemLinkBookLocation.TravelMethod travelMethod) {
+        this(command, hand, "", pos, yaw, dimName, travelMethod);
     }
 
     public PacketLinkBook (PacketBuffer buf) {
@@ -103,7 +105,7 @@ public class PacketLinkBook {
 
                 //Handles teleportation on the server.
                 if (command.equalsIgnoreCase("teleport")) {
-                    ItemLinkBookLocation.teleport(player.world, player, location, yaw, dimName);
+                    ItemLinkBookLocation.teleport(player.world, player, location, yaw, dimName, travelMethod);
                 }
 
                 else if (stack.getItem() instanceof ItemLinkBookLocation) {

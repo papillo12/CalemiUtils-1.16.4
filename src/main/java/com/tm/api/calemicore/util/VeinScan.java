@@ -44,7 +44,7 @@ public class VeinScan {
         buffer.clear();
     }
 
-    private void scan (Location location, int customMazSize, boolean useRadiusToBranch) {
+    public void scan (Location location, int customMazSize, boolean useRadiusToBranch) {
 
         if (customMazSize == 0) {
             customMazSize = MAX_SCAN_SIZE;

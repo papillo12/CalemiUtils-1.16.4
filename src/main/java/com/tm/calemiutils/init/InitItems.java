@@ -1,14 +1,19 @@
 package com.tm.calemiutils.init;
 
+import com.tm.calemiutils.block.base.BlockBase;
 import com.tm.calemiutils.main.CUReference;
 import com.tm.api.calemicore.block.BlockItemBase;
 import com.tm.calemiutils.item.*;
 import com.tm.calemiutils.item.base.ItemBase;
 import com.tm.calemiutils.block.*;
 import com.tm.calemiutils.main.CalemiUtils;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.Rarity;
+import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -28,6 +33,9 @@ public class InitItems {
 
     public static final RegistryObject<Block> RARITANIUM_ORE = BLOCKS.register("raritanium_ore", BlockRaritaniumOre::new);
     public static final RegistryObject<Item> RARITANIUM_ORE_ITEM = ITEMS.register("raritanium_ore", () -> new BlockItemBase(RARITANIUM_ORE.get(), CalemiUtils.TAB));
+
+    public static final RegistryObject<Block> RARITANIUM_BLOCK = BLOCKS.register("raritanium_block", () -> new BlockBase(AbstractBlock.Properties.create(Material.GLASS).sound(SoundType.GLASS).hardnessAndResistance(3).harvestLevel(2).harvestTool(ToolType.PICKAXE)));
+    public static final RegistryObject<Item> RARITANIUM_BLOCK_ITEM = ITEMS.register("raritanium_block", () -> new BlockItemBase(RARITANIUM_BLOCK.get(), CalemiUtils.TAB));
 
     public static final RegistryObject<Block> COIN_STACK_COPPER = BLOCKS.register("coin_stack_copper", BlockCoinStack::new);
     public static final RegistryObject<Block> COIN_STACK_SILVER = BLOCKS.register("coin_stack_silver", BlockCoinStack::new);
@@ -73,9 +81,15 @@ public class InitItems {
     public static final RegistryObject<Block> MARKET = BLOCKS.register("market", BlockMarket::new);
     public static final RegistryObject<Item> MARKET_ITEM = ITEMS.register("market", () -> new BlockItemBase(MARKET.get(), CalemiUtils.TAB));
 
+    public static final RegistryObject<Block> PORTAL_PROJECTOR = BLOCKS.register("portal_projector", BlockPortalProjector::new);
+    public static final RegistryObject<Item> PORTAL_PROJECTOR_ITEM = ITEMS.register("portal_projector", () -> new BlockItemBase(PORTAL_PROJECTOR.get(), CalemiUtils.TAB));
+
+    public static final RegistryObject<Block> LINK_PORTAL = BLOCKS.register("link_portal", BlockLinkPortal::new);
+    public static final RegistryObject<Item> LINK_PORTAL_ITEM = ITEMS.register("link_portal", () -> new BlockItemBase(LINK_PORTAL.get()));
+
     //----- ITEMS ------\\
 
-    public static final RegistryObject<Item> RARITANIUM = ITEMS.register("raritanium", ItemBase::new);
+    public static final RegistryObject<Item> RARITANIUM = ITEMS.register("raritanium", () -> new ItemBase(CalemiUtils.TAB));
     public static final RegistryObject<Item> COIN_COPPER = ITEMS.register("coin_copper", () -> new ItemCoin(1, COIN_STACK_COPPER.get()));
     public static final RegistryObject<Item> COIN_SILVER = ITEMS.register("coin_silver", () -> new ItemCoin(5, COIN_STACK_SILVER.get()));
     public static final RegistryObject<Item> COIN_GOLD = ITEMS.register("coin_gold", () -> new ItemCoin(25, COIN_STACK_GOLD.get()));
@@ -84,15 +98,15 @@ public class InitItems {
     public static final RegistryObject<Item> MONEY_BAG_CHEAP = ITEMS.register("money_bag_cheap", () -> new ItemMoneyBag(false));
     public static final RegistryObject<Item> MONEY_BAG_RICH = ITEMS.register("money_bag_rich", () -> new ItemMoneyBag(true));
 
-    public static final RegistryObject<Item> GOLD_CHIP = ITEMS.register("gold_chip", ItemBase::new);
-    public static final RegistryObject<Item> MOTOR = ITEMS.register("motor", ItemBase::new);
-    public static final RegistryObject<Item> KNOB_WOOD = ITEMS.register("knob_wood", ItemBase::new);
-    public static final RegistryObject<Item> KNOB_STONE = ITEMS.register("knob_stone", ItemBase::new);
-    public static final RegistryObject<Item> KNOB_IRON = ITEMS.register("knob_iron", ItemBase::new);
-    public static final RegistryObject<Item> KNOB_GOLD = ITEMS.register("knob_gold", ItemBase::new);
-    public static final RegistryObject<Item> KNOB_DIAMOND = ITEMS.register("knob_diamond", ItemBase::new);
-    public static final RegistryObject<Item> KNOB_NETHERITE = ITEMS.register("knob_netherite", ItemBase::new);
-    public static final RegistryObject<Item> KNOB_STARLIGHT = ITEMS.register("knob_starlight", () -> new ItemBase().setEffect().setRarity(Rarity.RARE));
+    public static final RegistryObject<Item> GOLD_CHIP = ITEMS.register("gold_chip", () -> new ItemBase(CalemiUtils.TAB));
+    public static final RegistryObject<Item> MOTOR = ITEMS.register("motor", () -> new ItemBase(CalemiUtils.TAB));
+    public static final RegistryObject<Item> KNOB_WOOD = ITEMS.register("knob_wood", () -> new ItemBase(CalemiUtils.TAB));
+    public static final RegistryObject<Item> KNOB_STONE = ITEMS.register("knob_stone", () -> new ItemBase(CalemiUtils.TAB));
+    public static final RegistryObject<Item> KNOB_IRON = ITEMS.register("knob_iron", () -> new ItemBase(CalemiUtils.TAB));
+    public static final RegistryObject<Item> KNOB_GOLD = ITEMS.register("knob_gold", () -> new ItemBase(CalemiUtils.TAB));
+    public static final RegistryObject<Item> KNOB_DIAMOND = ITEMS.register("knob_diamond", () -> new ItemBase(CalemiUtils.TAB));
+    public static final RegistryObject<Item> KNOB_NETHERITE = ITEMS.register("knob_netherite", () -> new ItemBase(CalemiUtils.TAB));
+    public static final RegistryObject<Item> KNOB_STARLIGHT = ITEMS.register("knob_starlight", () -> new ItemBase(CalemiUtils.TAB).setEffect().setRarity(Rarity.RARE));
 
     public static final RegistryObject<Item> SLEDGEHAMMER_WOOD = ITEMS.register("sledgehammer_wood", () -> new ItemSledgehammer(SledgehammerTiers.WOOD));
     public static final RegistryObject<Item> SLEDGEHAMMER_STONE = ITEMS.register("sledgehammer_stone", () -> new ItemSledgehammer(SledgehammerTiers.STONE));

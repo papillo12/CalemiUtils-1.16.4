@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "calemiutils:block/link_portal_ns"
+    },
+    "axis=z": {
+      "model": "calemiutils:block/link_portal_ew"
+    }
+  }
+}

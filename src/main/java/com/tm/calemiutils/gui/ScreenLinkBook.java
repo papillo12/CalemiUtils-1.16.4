@@ -11,6 +11,7 @@ import com.tm.api.calemicore.util.helper.ItemHelper;
 import com.tm.api.calemicore.util.helper.ScreenHelper;
 import com.tm.api.calemicore.util.helper.SoundHelper;
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.tm.calemiutils.util.helper.CurrencyHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
@@ -146,10 +147,7 @@ public class ScreenLinkBook extends GuiScreenBase {
                 float yaw = ItemLinkBookLocation.getLinkedRotation(bookStack);
                 String dimName = ItemLinkBookLocation.getLinkedDimensionName(bookStack);
 
-                SoundHelper.playSoundAtLocation(location, SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 0.9F, 1.1F);
-                SoundHelper.playSound(player, SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 0.9F, 1.1F);
-
-                CalemiUtils.network.sendToServer(new PacketLinkBook("teleport", hand, pos, yaw, dimName));
+                CalemiUtils.network.sendToServer(new PacketLinkBook("teleport", hand, pos, yaw, dimName, isBookInHand ? ItemLinkBookLocation.TravelMethod.PORTABLE : ItemLinkBookLocation.TravelMethod.BOOK_STAND));
 
                 player.closeScreen();
             }
@@ -175,12 +173,20 @@ public class ScreenLinkBook extends GuiScreenBase {
 
             //If the Link Book is linked and has a existing Location, set the string to the Location's details.
             if (ItemLinkBookLocation.isLinked(bookStack) && location != null) {
-                ScreenHelper.drawCenteredString(matrixStack, bookStack.getDisplayName().getString(), getScreenX(), getScreenY() - 28, 0, 0xFFFFFF);
-                string = nbt.getString("DimName") + " " + location.toString();
+                ScreenHelper.drawCenteredString(matrixStack, bookStack.getDisplayName().getString(), getScreenX(), getScreenY() - 38, 0, 0xFFFFFF);
+
+                String dimName = ItemLinkBookLocation.getLinkedDimensionName(bookStack);
+                string = dimName.substring(dimName.indexOf(":") + 1).toUpperCase() + " " + location;
+
+                int travelCost = ItemLinkBookLocation.getCostForTravel(player.world, location, player);
+
+                if (travelCost > 0) {
+                    ScreenHelper.drawCenteredString(matrixStack, "Total Travel Cost: " + CurrencyHelper.printCurrency(travelCost), getScreenX(), getScreenY() - 18, 0, 0xFFFFFF);
+                }
             }
 
             //Render the Link Book's linked Location's details. Shows "Not set" if the Link Book is not linked.
-            ScreenHelper.drawCenteredString(matrixStack, string, getScreenX(), getScreenY() - 18, 0, 0xFFFFFF);
+            ScreenHelper.drawCenteredString(matrixStack, string, getScreenX(), getScreenY() - 28, 0, 0xFFFFFF);
         }
     }
 

@@ -24,7 +24,7 @@ import java.util.List;
 
 public class Location {
 
-    public final World world;
+    public World world;
     public int x, y, z;
     private BlockPos blockPos;
 
@@ -152,6 +152,10 @@ public class Location {
         world.setBlockState(getBlockPos(), state);
     }
 
+    public void setBlockWithoutNotify(BlockState state) {
+        world.setBlockState(getBlockPos(), state, 18);
+    }
+
     public void setBlock(BlockState state, PlayerEntity placer) {
         world.setBlockState(getBlockPos(), state, 2);
         state.getBlock().onBlockPlacedBy(world, getBlockPos(), state, placer, new ItemStack(state.getBlock()));
@@ -179,7 +183,7 @@ public class Location {
     }
 
     public boolean isAirBlock() {
-        return getBlock() == Blocks.AIR;
+        return getBlockMaterial() == Material.AIR;
     }
 
     public boolean isBlockValidForPlacing() {
@@ -219,7 +223,7 @@ public class Location {
     }
 
     public void writeToNBT(CompoundNBT nbt) {
-        nbt.putInt("locX", z);
+        nbt.putInt("locX", x);
         nbt.putInt("locY", y);
         nbt.putInt("locZ", z);
     }

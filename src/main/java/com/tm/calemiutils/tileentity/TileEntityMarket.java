@@ -9,7 +9,7 @@ import com.tm.calemiutils.tileentity.base.TileEntityCUBase;
 import com.tm.api.calemicore.util.Location;
 import com.tm.calemiutils.util.helper.CurrencyHelper;
 import com.tm.api.calemicore.util.helper.InventoryHelper;
-import com.tm.calemiutils.util.NetworkHelper;
+import com.tm.calemiutils.util.helper.NetworkHelper;
 import net.minecraft.block.BlockState;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;

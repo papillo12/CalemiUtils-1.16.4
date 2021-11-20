@@ -31,6 +31,7 @@
 
 
   "block.calemiutils.raritanium_ore": "Raritanium Ore",
+  "block.calemiutils.raritanium_block": "Raritanium Block",
   "block.calemiutils.coin_stack_copper": "Copper Coin",
   "block.calemiutils.coin_stack_silver": "Silver Coin",
   "block.calemiutils.coin_stack_gold": "Gold Coin",
@@ -48,6 +49,8 @@
   "block.calemiutils.network_gate": "Network Gate",
   "block.calemiutils.trading_post": "Trading Post",
   "block.calemiutils.market": "Market",
+  "block.calemiutils.portal_projector": "Portal Projector",
+  "block.calemiutils.link_portal": "Link Portal",
 
 
   "itemGroup.calemiutils.tabMain": "Calemi's Utils",

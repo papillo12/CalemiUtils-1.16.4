@@ -13,7 +13,7 @@
       "item" : "minecraft:iron_ingot"
     },
     "D": {
-      "item": "calemiutils:coin_dollar"
+      "item": "calemiutils:coin_gold"
     }
   },
   "result": {
