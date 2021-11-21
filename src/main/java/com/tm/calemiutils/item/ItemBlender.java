@@ -65,7 +65,7 @@ public class ItemBlender extends ItemBase {
         //If the Player is crouching, toggle the blend mode.
         if (playerIn.isCrouching()) {
             ItemHelper.getNBT(stack).putBoolean("blend", !ItemHelper.getNBT(stack).getBoolean("blend"));
-            SoundHelper.playSimpleSound(playerIn, SoundEvents.BLOCK_LEVER_CLICK);
+            SoundHelper.playSimple(playerIn, SoundEvents.BLOCK_LEVER_CLICK);
             return new ActionResult<>(ActionResultType.SUCCESS, stack);
         }
 

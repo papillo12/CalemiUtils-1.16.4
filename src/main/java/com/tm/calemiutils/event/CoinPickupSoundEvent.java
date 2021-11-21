@@ -1,5 +1,6 @@
 package com.tm.calemiutils.event;
 
+import com.tm.api.calemicore.util.helper.LogHelper;
 import com.tm.calemiutils.init.InitSounds;
 import com.tm.calemiutils.item.ItemCoin;
 import com.tm.api.calemicore.util.helper.SoundHelper;
@@ -20,7 +21,7 @@ public class CoinPickupSoundEvent {
 
             if (event.getStack().getItem() instanceof ItemCoin) {
 
-                SoundHelper.playSound(event.getPlayer(), InitSounds.COIN.get(), SoundCategory.PLAYERS, 0.1F, 1F);
+                SoundHelper.playAtPlayerOnServer(event.getPlayer(), InitSounds.COIN.get(), SoundCategory.PLAYERS, 0.1F, 1F);
             }
         }
     }

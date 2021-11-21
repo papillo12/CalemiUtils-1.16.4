@@ -1,5 +1,6 @@
 package com.tm.calemiutils.item;
 
+import com.tm.calemiutils.config.CUConfig;
 import com.tm.calemiutils.init.InitSounds;
 import com.tm.calemiutils.main.CalemiUtils;
 import com.tm.calemiutils.init.InitItems;
@@ -50,13 +51,13 @@ public class ItemMoneyBag extends ItemBase {
         stack.shrink(1);
 
         if (isRich) {
-            SoundHelper.playSound(player, InitSounds.MONEY_BAG_RICH.get(), SoundCategory.PLAYERS, 0.1F, 1.0F);
-            giveCoins(world, player, 75, 300);
+            SoundHelper.playAtPlayer(player, InitSounds.MONEY_BAG_RICH.get(), SoundCategory.PLAYERS, 0.1F, 1.0F);
+            giveCoins(world, player, CUConfig.economy.richMoneyBagMin.get(), CUConfig.economy.richMoneyBagMax.get());
         }
 
         else {
-            SoundHelper.playSound(player, InitSounds.MONEY_BAG_CHEAP.get(), SoundCategory.PLAYERS, 0.1F, 1.0F);
-            giveCoins(world, player, 10, 100);
+            SoundHelper.playAtPlayer(player, InitSounds.MONEY_BAG_CHEAP.get(), SoundCategory.PLAYERS, 0.1F, 1.0F);
+            giveCoins(world, player, CUConfig.economy.cheapMoneyBagMin.get(), CUConfig.economy.cheapMoneyBagMax.get());
         }
 
         return new ActionResult<>(ActionResultType.FAIL, stack);

@@ -46,7 +46,7 @@ public class WorldEditHelper {
 
         message.printMessage(TextFormatting.GREEN, "Placed " + ItemHelper.countByStacks(count));
 
-        SoundHelper.playSimpleSound(player, SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP);
+        SoundHelper.playSimple(player, SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP);
     }
 
     public static ArrayList<Location> selectFlatCubeFromFace (Location location, Direction face, int radius) {

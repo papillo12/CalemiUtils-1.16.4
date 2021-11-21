@@ -77,7 +77,7 @@ public class ItemTorchBelt extends ItemBase {
     public static void setActive(ItemStack stack, World world, PlayerEntity player, boolean state) {
 
         ItemHelper.getNBT(stack).putBoolean("on", state);
-        SoundHelper.playSimpleSound(player, SoundEvents.BLOCK_LEVER_CLICK);
+        SoundHelper.playSimple(player, SoundEvents.BLOCK_LEVER_CLICK);
     }
 
     /**

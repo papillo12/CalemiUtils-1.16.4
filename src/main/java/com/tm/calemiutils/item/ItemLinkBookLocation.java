@@ -199,8 +199,8 @@ public class ItemLinkBookLocation extends ItemBase {
                     //Checks if it's safe to teleport to the link Location.
                     if (EntityHelper.canTeleportAt((ServerPlayerEntity) player, location)) {
 
-                        SoundHelper.playSoundAtLocation(location, SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 0.9F, 1.1F);
-                        SoundHelper.playSound(player, SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 0.9F, 1.1F);
+                        SoundHelper.playAtLocation(location, SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 0.9F, 1.1F);
+                        SoundHelper.playAtPlayer(player, SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 0.9F, 1.1F);
 
                         EntityHelper.teleportPlayer((ServerPlayerEntity) player, location, yaw);
 

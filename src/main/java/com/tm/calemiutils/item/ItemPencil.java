@@ -114,7 +114,7 @@ public class ItemPencil extends ItemBase {
 
                 if (location.isBlockValidForPlacing()) {
                     location.setBlock(BLUEPRINT.getDefaultState().with(BlockBlueprint.COLOR, DyeColor.byId(getColorId(context.getItem()))));
-                    SoundHelper.playSound(player, SoundEvents.BLOCK_STONE_PLACE, SoundCategory.PLAYERS, 0.9F, 2.0F);
+                    SoundHelper.playAtPlayer(player, SoundEvents.BLOCK_STONE_PLACE, SoundCategory.PLAYERS, 0.9F, 2.0F);
                 }
 
                 return ActionResultType.SUCCESS;

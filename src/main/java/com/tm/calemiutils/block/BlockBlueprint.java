@@ -90,7 +90,7 @@ public class BlockBlueprint extends BlockColoredBase {
             if (player.isCrouching()) {
                 replaceBlock(location, player, heldBlockState);
                 InventoryHelper.consumeStack(player.inventory, 1, false, heldStack);
-                SoundHelper.playBlockPlaceSound(world, player, Block.getBlockFromItem(heldStack.getItem()).getDefaultState(), location);
+                SoundHelper.playBlockPlace(world, player, Block.getBlockFromItem(heldStack.getItem()).getDefaultState(), location);
             }
 
             //Handles replacing every block in list.
@@ -109,8 +109,8 @@ public class BlockBlueprint extends BlockColoredBase {
 
                     if (amountToConsume > 0) {
 
-                        SoundHelper.playSimpleSound(player, SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP);
-                        SoundHelper.playBlockPlaceSound(world, player, Block.getBlockFromItem(heldStack.getItem()).getDefaultState(), location);
+                        SoundHelper.playSimple(player, SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP);
+                        SoundHelper.playBlockPlace(world, player, Block.getBlockFromItem(heldStack.getItem()).getDefaultState(), location);
 
                         if (!world.isRemote) message.printMessage(TextFormatting.GREEN, "Placed " + ItemHelper.countByStacks(amountToConsume));
                         InventoryHelper.consumeStack(player.inventory, amountToConsume, false, heldStack);

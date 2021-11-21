@@ -41,7 +41,7 @@ public class BlockHelper {
                     if (nextLocation.isBlockValidForPlacing()) {
 
                         nextLocation.setBlock(block);
-                        SoundHelper.playBlockPlaceSound(world, player, nextLocation.getForgeBlockState(), nextLocation);
+                        SoundHelper.playBlockPlace(world, player, nextLocation.getForgeBlockState(), nextLocation);
                         InventoryHelper.consumeStack(player.inventory, 1, false, new ItemStack(block));
                     }
 

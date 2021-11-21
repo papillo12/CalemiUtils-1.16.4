@@ -56,7 +56,7 @@ public class PacketToggleTorchBelt {
                         ItemTorchBelt.setActive(torchBelt, player.world, player, !active);
                     }
 
-                    SoundHelper.playSimpleSound(player, SoundEvents.BLOCK_LEVER_CLICK);
+                    SoundHelper.playSimple(player, SoundEvents.BLOCK_LEVER_CLICK);
                     ItemTorchBelt.getMessage(player).printMessage(TextFormatting.GREEN, "All Torch Belts in your inventory have been turned " + (active ? "off." : "on."));
                 }
 

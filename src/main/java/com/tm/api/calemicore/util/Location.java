@@ -175,7 +175,7 @@ public class Location {
             ((ServerPlayerEntity) player).interactionManager.tryHarvestBlock(blockPos);
         }
 
-        SoundHelper.playBlockPlaceSound(world, player, getBlockState(), this);
+        SoundHelper.playBlockPlace(world, player, getBlockState(), this);
     }
 
     public boolean isZero() {

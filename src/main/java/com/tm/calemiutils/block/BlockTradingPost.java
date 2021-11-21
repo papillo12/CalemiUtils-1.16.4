@@ -175,7 +175,7 @@ public class BlockTradingPost extends BlockInventoryContainerBase {
                         //Adds funds to the Player's current wallet.
                         CurrencyHelper.depositToWallet(walletStack, tePost.salePrice);
 
-                        SoundHelper.playSound(player, InitSounds.COIN.get(), SoundCategory.PLAYERS, 0.1F, 1F);
+                        SoundHelper.playAtPlayer(player, InitSounds.COIN.get(), SoundCategory.PLAYERS, 0.1F, 1F);
                     }
 
                     else if (!world.isRemote) message.printMessage(TextFormatting.RED, "The connected Bank is out of money!");
@@ -230,7 +230,7 @@ public class BlockTradingPost extends BlockInventoryContainerBase {
                     //Removes the amount of Items for sale.
                     if (!tePost.adminMode) InventoryHelper.consumeStack(tePost.getInventory(), tePost.amountForSale, true, tePost.getStackForSale());
 
-                    SoundHelper.playSound(player, InitSounds.COIN.get(), SoundCategory.PLAYERS, 0.1F, 1F);
+                    SoundHelper.playAtPlayer(player, InitSounds.COIN.get(), SoundCategory.PLAYERS, 0.1F, 1F);
                 }
 
                 else if (!world.isRemote) message.printMessage(TextFormatting.RED, "Full of money!");

@@ -67,7 +67,7 @@ public class ItemBrush extends ItemBase {
                 if (!world.isRemote) getMessage(player).printMessage(TextFormatting.GREEN, "Second position set to coords: " + location2.x + ", " + location2.y + ", " + location2.z);
             }
 
-            SoundHelper.playSimpleSound(player, SoundEvents.BLOCK_LEVER_CLICK);
+            SoundHelper.playSimple(player, SoundEvents.BLOCK_LEVER_CLICK);
             return ActionResultType.SUCCESS;
         }
 
