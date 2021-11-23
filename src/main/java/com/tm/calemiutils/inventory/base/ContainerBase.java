@@ -21,7 +21,6 @@ public class ContainerBase extends Container {
 
     protected final PlayerInventory playerInventory;
     public final TileEntityInventoryBase tileEntity;
-    public FunctionalIntReferenceHolder currentProgress;
     protected int size;
 
     protected boolean isItemContainer;
@@ -38,7 +37,7 @@ public class ContainerBase extends Container {
         if (tileEntity instanceof TileEntityUpgradable) {
 
             TileEntityUpgradable tileEntityProgress = (TileEntityUpgradable) tileEntity;
-            trackInt(currentProgress = new FunctionalIntReferenceHolder(tileEntityProgress::getCurrentProgress, tileEntityProgress::setCurrentProgress));
+            trackInt(new FunctionalIntReferenceHolder(tileEntityProgress::getCurrentProgress, tileEntityProgress::setCurrentProgress));
         }
     }
 
@@ -70,14 +69,14 @@ public class ContainerBase extends Container {
     /**
      * Used to add the Player's inventory.
      */
-    protected void addPlayerInv (int x, int y) {
+    private void addPlayerInv(int x, int y) {
         addStorageInv(playerInventory, 9, x, y, 3);
     }
 
     /**
      * Used to add the Player's hotbar.
      */
-    protected void addPlayerHotbar (int x, int y) {
+    private void addPlayerHotbar(int x, int y) {
         addStorageInv(playerInventory, 0, x, y, 1);
     }
 

@@ -45,7 +45,7 @@ public class PacketOpenWallet {
                 ItemStack stack = player.inventory.getStackInSlot(slotId);
 
                 NetworkHooks.openGui(player, new SimpleNamedContainerProvider(
-                    (id, playerInventory, openPlayer) -> new ContainerWallet(id, playerInventory, new ItemStackInventory(stack, 1), player.inventory.currentItem), stack.getDisplayName()),
+                    (id, playerInventory, openPlayer) -> new ContainerWallet(id, playerInventory, new ItemStackInventory(stack, 1)), stack.getDisplayName()),
                     (buffer) -> buffer.writeVarInt(player.inventory.currentItem));
             }
         });

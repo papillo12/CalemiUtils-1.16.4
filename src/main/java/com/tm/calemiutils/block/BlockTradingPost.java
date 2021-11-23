@@ -5,7 +5,6 @@ import com.tm.api.calemicore.util.helper.*;
 import com.tm.calemiutils.init.InitItems;
 import com.tm.calemiutils.init.InitSounds;
 import com.tm.calemiutils.init.InitTileEntityTypes;
-import com.tm.calemiutils.item.ItemWallet;
 import com.tm.calemiutils.tileentity.TileEntityTradingPost;
 import com.tm.api.calemicore.util.Location;
 import com.tm.api.calemicore.util.UnitChatMessage;
@@ -111,7 +110,6 @@ public class BlockTradingPost extends BlockInventoryContainerBase {
     private void handleTrade (UnitChatMessage message, World world, PlayerEntity player, TileEntityTradingPost tePost) {
 
         ItemStack walletStack = CurrencyHelper.getCurrentWalletStack(player);
-        ItemWallet wallet = (ItemWallet) walletStack.getItem();
 
         //Checks if there is a connected bank OR if the price is free OR if the Trading Post is in admin mode.
         if (tePost.getBank() != null || tePost.salePrice <= 0 || tePost.adminMode) {

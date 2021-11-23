@@ -10,7 +10,7 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = CUReference.MOD_ID)
 public class EnchantmentCrushing extends Enchantment {
 
-    public static final EnchantmentType HAMMER = EnchantmentType.create("weapons", (item) -> (item instanceof ItemSledgehammer));
+    private static final EnchantmentType HAMMER = EnchantmentType.create("weapons", (item) -> (item instanceof ItemSledgehammer));
 
     public EnchantmentCrushing () {
         super(Rarity.UNCOMMON, HAMMER, new EquipmentSlotType[] {EquipmentSlotType.MAINHAND});

@@ -30,7 +30,7 @@ public abstract class ContainerScreenBase<T extends ContainerBase> extends Conta
     protected final PlayerEntity player;
     private final Container container;
 
-    public int leftTabOffset;
+    protected int leftTabOffset;
     private int rightTabOffset;
 
     private int currentProgress;
@@ -76,7 +76,7 @@ public abstract class ContainerScreenBase<T extends ContainerBase> extends Conta
     /**
      * Used to determine the height of the GUI.
      */
-    public int getGuiSizeY () {
+    protected int getGuiSizeY() {
         return 176;
     }
 
@@ -331,7 +331,7 @@ public abstract class ContainerScreenBase<T extends ContainerBase> extends Conta
     /**
      * Renders a tab on the right of the inventory.
      */
-    protected void addRightInfoTab (MatrixStack matrixStack, String text, int sizeAdd, int sizeY) {
+    private void addRightInfoTab(MatrixStack matrixStack, String text, int sizeAdd, int sizeY) {
 
         if (minecraft != null) {
 

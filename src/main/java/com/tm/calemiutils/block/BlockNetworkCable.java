@@ -53,16 +53,13 @@ public class BlockNetworkCable extends BlockNetworkCableOpaque {
      */
     private boolean canCableConnectTo (IBlockReader world, BlockPos pos, Direction facing) {
         BlockPos otherPos = pos.offset(facing);
-        Block block = world.getBlockState(pos).getBlock();
-        Block otherBlock = world.getBlockState(otherPos).getBlock();
-
         return canBeConnectedTo(world, otherPos, facing.getOpposite());
     }
 
     /**
      * Checks if the INetwork at the given pos contains a connectable position that is the same as the given.
      */
-    public boolean canBeConnectedTo(IBlockReader world, BlockPos pos, Direction facing) {
+    private boolean canBeConnectedTo(IBlockReader world, BlockPos pos, Direction facing) {
 
         TileEntity tileEntity = world.getTileEntity(pos);
 

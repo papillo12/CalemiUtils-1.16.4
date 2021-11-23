@@ -69,7 +69,6 @@ public class BlockIronScaffold extends BlockBase {
                 for (int i = 0; i < CUConfig.misc.scaffoldMaxHeightTp.get(); i++) {
 
                     Location nextLocation = new Location(clickedLocation, Direction.UP, i);
-                    Location nextLocationUp = new Location(clickedLocation, Direction.UP, i + 1);
 
                     //If the current Location is not a Scaffold, stop all iterating and check further.
                     if (nextLocation.getBlock() != this) {
@@ -78,7 +77,7 @@ public class BlockIronScaffold extends BlockBase {
 
                         if (!world.isRemote) {
 
-                            if (EntityHelper.canTeleportAt((ServerPlayerEntity) player, nextLocation)) {
+                            if (EntityHelper.canTeleportAt(nextLocation)) {
                                 EntityHelper.teleportPlayer((ServerPlayerEntity) player, nextLocation, player.rotationYaw, player.rotationPitch);
                                 return ActionResultType.SUCCESS;
                             }
@@ -113,7 +112,7 @@ public class BlockIronScaffold extends BlockBase {
 
                                 if (!world.isRemote) {
 
-                                    if (EntityHelper.canTeleportAt((ServerPlayerEntity) player, sqrLocation)) {
+                                    if (EntityHelper.canTeleportAt(sqrLocation)) {
                                         EntityHelper.teleportPlayer((ServerPlayerEntity) player, sqrLocation, player.rotationYaw, player.rotationPitch);
                                         return ActionResultType.SUCCESS;
                                     }

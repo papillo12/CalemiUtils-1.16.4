@@ -45,23 +45,18 @@ import top.theillusivec4.curios.api.SlotTypeMessage;
 @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
 public class CalemiUtils {
 
-    public static CalemiUtils instance;
-
-    public static IEventBus MOD_EVENT_BUS;
     public static SimpleChannel network;
 
-    public static final ResourceLocation EMPTY_WALLET_SLOT = new ResourceLocation(CUReference.MOD_ID, "gui/empty_wallet_slot");
+    private static final ResourceLocation EMPTY_WALLET_SLOT = new ResourceLocation(CUReference.MOD_ID, "gui/empty_wallet_slot");
     public static boolean curiosLoaded = false;
 
     public static final ItemGroup TAB = new CUTab();
 
     public CalemiUtils () {
 
-        instance = this;
-
         curiosLoaded = ModList.get().isLoaded("curios");
 
-        MOD_EVENT_BUS = FMLJavaModLoadingContext.get().getModEventBus();
+        IEventBus MOD_EVENT_BUS = FMLJavaModLoadingContext.get().getModEventBus();
         MOD_EVENT_BUS.addListener(this::onCommonSetup);
         MOD_EVENT_BUS.addListener(this::onClientSetup);
 

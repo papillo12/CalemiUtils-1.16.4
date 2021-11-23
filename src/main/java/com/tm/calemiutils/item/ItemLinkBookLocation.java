@@ -197,7 +197,7 @@ public class ItemLinkBookLocation extends ItemBase {
                 if (CurrencyHelper.canWithdrawFromWallet(CurrencyHelper.getCurrentWalletStack(player), travelCost) || travelCost == 0) {
 
                     //Checks if it's safe to teleport to the link Location.
-                    if (EntityHelper.canTeleportAt((ServerPlayerEntity) player, location)) {
+                    if (EntityHelper.canTeleportAt(location)) {
 
                         SoundHelper.playAtLocation(location, SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 0.9F, 1.1F);
                         SoundHelper.playAtPlayer(player, SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 0.9F, 1.1F);

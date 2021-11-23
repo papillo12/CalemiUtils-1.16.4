@@ -23,7 +23,7 @@ public class DyeColorArgument implements ArgumentType<String> {
         return new DyeColorArgument();
     }
 
-    public static String getColor (CommandContext<CommandSource> context, String name) {
+    static String getColor(CommandContext<CommandSource> context, String name) {
         return context.getArgument(name, String.class);
     }
 

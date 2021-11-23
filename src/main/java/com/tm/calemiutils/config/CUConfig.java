@@ -13,15 +13,12 @@ public class CUConfig {
     private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 
     public static final CategoryWorldGen worldGen = new CategoryWorldGen(BUILDER);
-    public static final CategoryBlockScans blockScans = new CategoryBlockScans(BUILDER);
     public static final CategoryEconomy economy = new CategoryEconomy(BUILDER);
     public static final CategoryWallet wallet = new CategoryWallet(BUILDER);
     public static final CategoryLinkBook linkBook = new CategoryLinkBook(BUILDER);
     public static final CategoryMisc misc = new CategoryMisc(BUILDER);
 
     public static final ForgeConfigSpec spec = BUILDER.build();
-
-    private static final String NEEDED_FOR_SERVERS = "(Only needed on Servers)";
 
     public static class CategoryWorldGen {
 
@@ -31,7 +28,7 @@ public class CUConfig {
         public final ForgeConfigSpec.ConfigValue<Integer> raritaniumOreGenMinY;
         public final ForgeConfigSpec.ConfigValue<Integer> raritaniumOreGenMaxY;
 
-        public CategoryWorldGen (ForgeConfigSpec.Builder builder) {
+        CategoryWorldGen(ForgeConfigSpec.Builder builder) {
 
             builder.push("WorldGen");
 
@@ -54,32 +51,16 @@ public class CUConfig {
         }
     }
 
-    public static class CategoryBlockScans {
-
-        public final ForgeConfigSpec.ConfigValue<Integer> worldEditMaxSize;
-
-        public CategoryBlockScans (ForgeConfigSpec.Builder builder) {
-
-            builder.push("BlockScans");
-
-            worldEditMaxSize = builder.comment("Brush Max Size", "0 to Disable. The max size of blocks the Brush can place. Lower values run faster on servers.")
-                    .defineInRange("worldEditMaxSize", 10000, 0, 20000);
-
-            builder.pop();
-        }
-    }
-
     public static class CategoryEconomy {
 
         public final ForgeConfigSpec.ConfigValue<String> currencyName;
         public final ForgeConfigSpec.ConfigValue<Integer> bankCurrencyCapacity;
-        public final ForgeConfigSpec.ConfigValue<Integer> postCurrencyCapacity;
         public final ForgeConfigSpec.ConfigValue<Integer> cheapMoneyBagMin;
         public final ForgeConfigSpec.ConfigValue<Integer> cheapMoneyBagMax;
         public final ForgeConfigSpec.ConfigValue<Integer> richMoneyBagMin;
         public final ForgeConfigSpec.ConfigValue<Integer> richMoneyBagMax;
 
-        public CategoryEconomy (ForgeConfigSpec.Builder builder) {
+        CategoryEconomy(ForgeConfigSpec.Builder builder) {
 
             builder.push("Economy");
 
@@ -88,9 +69,6 @@ public class CUConfig {
 
             bankCurrencyCapacity = builder.comment("Bank Currency Capacity", "The max amount of currency the Bank can store.")
                     .defineInRange("bankCurrencyCapacity", 1000000, 0, 99999999);
-
-            postCurrencyCapacity = builder.comment("Trading Post Currency Capacity", "The max amount of currency the Trading Post can store.")
-                    .defineInRange("postCurrencyCapacity", 1000000, 0, 99999999);
 
             cheapMoneyBagMin = builder.comment("Cheap Money Bag Minimum Coins Amount", "The minimum of the random amount of currency the Cheap Money Bag gives.")
                     .defineInRange("cheapMoneyBagMin", 10, 0, 10000);
@@ -114,7 +92,7 @@ public class CUConfig {
         public final ForgeConfigSpec.ConfigValue<Boolean> walletOverlay;
         public final ForgeConfigSpec.ConfigValue<String> walletOverlayPosition;
 
-        public CategoryWallet (ForgeConfigSpec.Builder builder) {
+        CategoryWallet(ForgeConfigSpec.Builder builder) {
 
             builder.push("Wallet");
 
@@ -138,7 +116,7 @@ public class CUConfig {
         public final ForgeConfigSpec.ConfigValue<Boolean> linkBookPortableTravel;
         public final ForgeConfigSpec.ConfigValue<Double> linkBookTravelCostPerChunk;
 
-        public CategoryLinkBook (ForgeConfigSpec.Builder builder) {
+        CategoryLinkBook(ForgeConfigSpec.Builder builder) {
 
             builder.push("Link Book");
 
@@ -165,7 +143,7 @@ public class CUConfig {
         public final ForgeConfigSpec.ConfigValue<Boolean> tradingPostBroadcasts;
         public final ForgeConfigSpec.ConfigValue<Integer> tradingPostBroadcastDelay;
 
-        public CategoryMisc (ForgeConfigSpec.Builder builder) {
+        CategoryMisc(ForgeConfigSpec.Builder builder) {
 
             builder.push("Misc");
 

@@ -12,7 +12,7 @@ public abstract class BlockContainerBase extends ContainerBlock {
     /**
      * @param properties The specific properties for the Block. (Creative Tab, hardness, material, etc.)
      */
-    public BlockContainerBase (Properties properties) {
+    protected BlockContainerBase(Properties properties) {
         super(properties);
     }
 

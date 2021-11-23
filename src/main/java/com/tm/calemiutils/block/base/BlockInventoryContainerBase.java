@@ -29,7 +29,7 @@ public abstract class BlockInventoryContainerBase extends BlockContainerBase {
     /**
      * @param properties The specific properties for the Block. (Creative Tab, hardness, material, etc.)
      */
-    public BlockInventoryContainerBase (Properties properties) {
+    protected BlockInventoryContainerBase(Properties properties) {
         super(properties);
     }
 

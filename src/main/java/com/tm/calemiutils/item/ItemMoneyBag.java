@@ -25,7 +25,7 @@ import java.util.Random;
 
 public class ItemMoneyBag extends ItemBase {
 
-    Random random = new Random();
+    final Random random = new Random();
 
     private final boolean isRich;
 

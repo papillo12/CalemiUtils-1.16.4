@@ -51,9 +51,7 @@ public class PacketPencilSetColor {
 
                 //Checks if the held item is a Pencil.
                 if (stack.getItem() instanceof ItemPencil) {
-
-                    ItemPencil pencil = (ItemPencil) stack.getItem();
-                    pencil.setColorById(stack, colorId);
+                    ItemPencil.setColorById(stack, colorId);
                 }
             }
         });

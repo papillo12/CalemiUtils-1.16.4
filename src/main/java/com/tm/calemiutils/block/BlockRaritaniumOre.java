@@ -21,7 +21,7 @@ import java.util.Random;
 
 public class BlockRaritaniumOre extends BlockBase {
 
-    static final Random rand = new Random();
+    private static final Random rand = new Random();
 
     public BlockRaritaniumOre () {
         super(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(3).harvestLevel(2).harvestTool(ToolType.PICKAXE));

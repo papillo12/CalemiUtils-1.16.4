@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class CUTab extends ItemGroup {
+class CUTab extends ItemGroup {
 
     public CUTab() {
         super(CUReference.MOD_ID + ".tabMain");

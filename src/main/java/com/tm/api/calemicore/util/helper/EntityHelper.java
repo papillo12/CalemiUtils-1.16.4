@@ -10,19 +10,15 @@ import java.util.Set;
 
 public class EntityHelper {
 
-    public static void teleportPlayer (ServerPlayerEntity entity, Location location, float yaw, float pitch) {
-        teleport(entity, location, yaw, pitch);
+    public static void teleportPlayer (ServerPlayerEntity entity, Location location) {
+        teleportPlayer(entity, location, 0, 0);
     }
 
     public static void teleportPlayer (ServerPlayerEntity entity, Location location, float yaw) {
-        teleport(entity, location, yaw, 0);
+        teleportPlayer(entity, location, yaw, 0);
     }
 
-    public static void teleportPlayer (ServerPlayerEntity entity, Location location) {
-        teleport(entity, location, 0, 0);
-    }
-
-    private static void teleport (ServerPlayerEntity entity, Location location, float yaw, float pitch) {
+    public static void teleportPlayer(ServerPlayerEntity entity, Location location, float yaw, float pitch) {
 
         Set<SPlayerPositionLookPacket.Flags> set = EnumSet.noneOf(SPlayerPositionLookPacket.Flags.class);
 
@@ -35,7 +31,7 @@ public class EntityHelper {
         }
     }
 
-    public static boolean canTeleportAt (ServerPlayerEntity entity, Location legLocation) {
+    public static boolean canTeleportAt(Location legLocation) {
 
         Location groundLocation = new Location(legLocation, Direction.DOWN);
         Location headLocation = new Location(legLocation, Direction.UP);

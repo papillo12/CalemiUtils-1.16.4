@@ -131,8 +131,8 @@ public class MarketItemsFile {
     public static class MarketItem {
 
         public final int index;
-        public final String stackStr;
-        public final String stackNBT;
+        final String stackStr;
+        final String stackNBT;
         public final int amount;
         public final int value;
 

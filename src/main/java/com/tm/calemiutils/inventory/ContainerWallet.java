@@ -6,43 +6,35 @@ import com.tm.calemiutils.inventory.base.ContainerBase;
 import com.tm.api.calemicore.inventory.SlotIInventoryFilter;
 import com.tm.calemiutils.item.ItemCoin;
 import com.tm.calemiutils.util.helper.CurrencyHelper;
-import com.tm.api.calemicore.util.helper.ItemHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.PacketBuffer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class ContainerWallet extends ContainerBase {
 
-    public final int selectedSlot;
     private final IInventory stackInv;
 
-    public ContainerWallet (final int windowID, final PlayerInventory playerInventory, IInventory stackInv, int selectedSlot) {
+    public ContainerWallet(final int windowID, final PlayerInventory playerInventory, IInventory stackInv) {
         super(InitContainerTypes.WALLET.get(), windowID, playerInventory, null, 8, 94);
 
         isItemContainer = true;
         size = 1;
 
         this.stackInv = stackInv;
-        this.selectedSlot = selectedSlot;
 
         //New Inventory
         addSlot(new SlotIInventoryFilter(stackInv, 0, 17, 42, InitItems.COIN_COPPER.get(), InitItems.COIN_SILVER.get(), InitItems.COIN_GOLD.get(), InitItems.COIN_PLATINUM.get()));
     }
 
     public static ContainerWallet createClientWallet (final int windowId, final PlayerInventory playerInventory, final PacketBuffer data) {
-        final int selectedSlot = data.readVarInt();
-        return new ContainerWallet(windowId, playerInventory, new Inventory(1), selectedSlot);
-    }
-
-    private CompoundNBT getNBT () {
-        return ItemHelper.getNBT(getCurrentWalletStack());
+        data.readVarInt();
+        return new ContainerWallet(windowId, playerInventory, new Inventory(1));
     }
 
     private ItemStack getCurrentWalletStack () {

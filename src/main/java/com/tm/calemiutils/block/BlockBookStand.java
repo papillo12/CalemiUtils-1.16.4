@@ -64,8 +64,6 @@ public class BlockBookStand extends BlockInventoryContainerBase {
         Location location = new Location(world, pos);
         TileEntity tileEntity = location.getTileEntity();
 
-        TileEntityBookStand tileEntityBookStand = (TileEntityBookStand) tileEntity;
-
         if (player.getHeldItem(hand).getItem() instanceof ItemLinkBookLocation) {
             return ActionResultType.FAIL;
         }
